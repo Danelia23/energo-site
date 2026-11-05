@@ -207,38 +207,36 @@
     });
   });
 
-  /* ---------- Карта (Leaflet подгружается при прокрутке) ---------- */
+  /* ---------- Карта: живая карта включается только если есть данные о терминалах (data/terminals.json) ---------- */
   var mapBox = document.getElementById("map-box");
   if (mapBox) {
     var started = false;
     var start = function () {
       if (started) return; started = true;
-      var css = document.createElement("link");
-      css.rel = "stylesheet"; css.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
-      document.head.appendChild(css);
-      var js = document.createElement("script");
-      js.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
-      js.onload = initMap; document.head.appendChild(js);
+      fetch(CFG.terminalsUrl || "data/terminals.json").then(function (r) { return r.json(); }).catch(function () { return []; }).then(function (list) {
+        if (!Array.isArray(list) || !list.length) return;      // данных нет — остаётся блок «покрытие»
+        var css = document.createElement("link");
+        css.rel = "stylesheet"; css.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
+        document.head.appendChild(css);
+        var js = document.createElement("script");
+        js.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
+        js.onload = function () { mapBox.classList.add("map-box--live"); initMap(list); };
+        document.head.appendChild(js);
+      });
     };
     if ("IntersectionObserver" in window) {
       new IntersectionObserver(function (en, o) { if (en[0].isIntersecting) { start(); o.disconnect(); } }, { rootMargin: "300px" }).observe(mapBox);
     } else start();
   }
-  function initMap() {
+  function initMap(points) {
     var L = window.L;
     var map = L.map("map", { scrollWheelZoom: false }).setView([55.75, 37.62], 10);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18, attribution: "© OpenStreetMap" }).addTo(map);
-    var empty = document.getElementById("map-empty");
-    var points = [];
-    fetch(CFG.terminalsUrl || "data/terminals.json").then(function (r) { return r.json(); }).catch(function () { return []; }).then(function (list) {
-      points = list || [];
-      if (!points.length) { empty.hidden = false; return; }
-      var icon = L.divIcon({ className: "", html: '<div class="pin" style="width:30px;height:30px"><span>go</span></div>', iconSize: [30, 30], iconAnchor: [15, 30] });
-      points.forEach(function (p) {
-        L.marker([p.lat, p.lng], { icon: icon }).addTo(map).bindPopup("<b>" + esc(p.name || "Терминал EnerGO") + "</b><br>" + esc(p.address || ""));
-      });
-      map.fitBounds(points.map(function (p) { return [p.lat, p.lng]; }), { padding: [40, 40] });
+    var icon = L.divIcon({ className: "", html: '<div class="pin" style="width:30px;height:30px"><span>go</span></div>', iconSize: [30, 30], iconAnchor: [15, 30] });
+    points.forEach(function (p) {
+      L.marker([p.lat, p.lng], { icon: icon }).addTo(map).bindPopup("<b>" + esc(p.name || "Терминал EnerGO") + "</b><br>" + esc(p.address || ""));
     });
+    map.fitBounds(points.map(function (p) { return [p.lat, p.lng]; }), { padding: [40, 40] });
     var form = document.getElementById("map-search");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -247,6 +245,11 @@
       if (hit) map.flyTo([hit.lat, hit.lng], 16);
     });
   }
+  /* Ссылки-заглушки (href="#") не прокручивают страницу к началу */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href="#"]');
+    if (a && !a.hasAttribute("data-open-cookie")) e.preventDefault();
+  });
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
 
   /* ---------- 3D-пауэрбанк (three.js) подгружается после загрузки страницы ---------- */

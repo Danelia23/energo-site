@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# [УТОЧНИТЬ: домен] — после публикации добавить строку Sitemap: https://<домен>/sitemap.xml

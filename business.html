@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EnerGO для бизнеса — терминал с пауэрбанками в вашем заведении</title>
 <meta name="description" content="Установим терминал EnerGO в вашем заведении: оборудование, установка и обслуживание за счёт EnerGO. Вы получаете долю выручки терминала.">
-<meta name="theme-color" content="#FCDE31">
+<meta name="theme-color" content="#0E0E0E">
+<meta property="og:site_name" content="EnerGO">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="EnerGO для бизнеса — терминал с пауэрбанками в вашем заведении">
+<meta property="og:description" content="Установим терминал EnerGO в вашем заведении: оборудование, установка и обслуживание за счёт EnerGO. Вы получаете долю выручки терминала.">
+<!-- [УТОЧНИТЬ: домен сайта] — после публикации добавить og:url, og:image (абсолютная ссылка на картинку 1200×630), canonical и sitemap.xml -->
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnerGO","legalName":"ООО «ЭНЕРГО ТЕХНОЛОДЖИС»","taxID":"5024194594","telephone":"+7-800-600-42-64","email":"support@energo.app","address":{"@type":"PostalAddress","addressCountry":"RU","addressLocality":"Москва","streetAddress":"пл. Калужская, д. 1, к. 1, помещ. 1П","postalCode":"119049"}}</script>
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
 <script>document.documentElement.classList.add("js")</script>
@@ -14,28 +22,33 @@
 <a class="skip" href="#main">К содержимому</a>
 <header class="header">
   <div class="wrap header__in">
-    <a class="logo" href="index.html" aria-label="EnerGO — на главную"><img class="logo__w" src="assets/img/logo-white.svg" alt="EnerGO" width="187" height="39"><img class="logo__d" src="assets/img/logo.svg" alt="" aria-hidden="true" width="187" height="39"></a>
+    <a class="logo" href="index.html" aria-label="EnerGO — на главную"><img class="logo__w" src="assets/img/logo-white.svg" alt="EnerGO" width="187" height="39"></a>
     <nav class="nav" id="nav" data-open="false" aria-label="Основное меню">
       <a href="business.html" aria-current="page">Для бизнеса</a>
       <a href="franchise.html">Франшиза</a>
       <a href="events.html">Для мероприятий</a>
       <a href="partners.html">Партнёры</a>
       <a class="nav__mobile" href="contacts.html">Контакты</a>
+      <a class="nav__app" href="https://onelink.to/35pdxt">Скачать приложение</a>
     </nav>
-    <a class="header__phone" href="tel:+78006004264">8 (800) 600-42-64</a>
+    <div class="header__act">
+      <a class="header__phone" href="tel:+78006004264">8 (800) 600-42-64</a>
+      <a class="btn btn--yellow btn--sm header__cta" href="https://onelink.to/35pdxt">Скачать приложение</a>
+    </div>
     <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
   </div>
 </header>
-<main id="main">
 
+<main id="main">
 <section class="hero hero--page">
   <!-- Фон: положите фото в assets/img/hero-business.jpg. Для видео вместо фото: <video class="hero__video" autoplay muted loop playsinline src="assets/img/hero.mp4"></video> -->
   <div class="hero__bg" style="--hero-img:url('../assets/img/hero-business.jpg')" aria-hidden="true"></div>
+    <div class="hero__art hero__art--card" aria-hidden="true"><img src="assets/img/terminal-card.webp" alt="" width="720" height="840"></div>
   <div class="wrap hero__in">
     <div class="hero__text">
       
-      <h1>Терминал EnerGO<br>в вашем заведении</h1>
-      <p class="hero__lead">Гости заряжают телефоны, а заведение получает долю выручки терминала. Мы берём на себя всё остальное.</p>
+      <h1>Терминал EnerGO<br>в вашем заведении</h1>
+      <p class="hero__lead">Гости заряжают телефоны, а заведение получает долю выручки терминала. Мы берём на себя всё остальное.</p>
       <div class="btn-row"><a class="btn btn--yellow" href="#form">Оставить заявку</a><a class="btn btn--grey" href="tel:+74951201876">8 (495) 120-18-76</a></div>
       <p class="hero__note">Коммерческий отдел, будни 9:00–18:00</p>
     </div>
@@ -44,33 +57,33 @@
 
 <section class="sheet">
   <div class="wrap">
-    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Что вы получаете</span><h2>Мы делаем всё — вы получаете выручку</h2></div>
+    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Что вы получаете</span><h2>Мы делаем всё — вы получаете выручку</h2></div>
     <div class="grid grid--2">
-      <div class="card" data-reveal style="--d:0s"><div class="ico">✓</div><h3>Оборудование, установка и обслуживание — за счёт EnerGO</h3><p>Вы не покупаете терминал и не платите за его установку и обслуживание.</p></div>
-      <div class="card" data-reveal style="--d:0.08s"><div class="ico">%</div><h3>Доля выручки терминала</h3><p>Заведение получает долю выручки терминала. <span class="todo">[УТОЧНИТЬ: условия и размер доли — публиковать только после подтверждения]</span></p></div>
-      <div class="card" data-reveal style="--d:0s"><div class="ico">0</div><h3>Персонал ничего не делает</h3><p>Сотрудникам не нужно выдавать пауэрбанки и отвечать за них: терминал работает сам.</p></div>
-      <div class="card" data-reveal style="--d:0.08s"><div class="ico">★</div><h3>Фирменный стиль площадки</h3><p>Терминал можно оформить в стиле вашего заведения.</p></div>
+      <div class="card" data-reveal style="--d:0s"><div class="ico">✓</div><h3>Оборудование, установка и обслуживание — за счёт EnerGO</h3><p>Вы не покупаете терминал и не платите за его установку и обслуживание.</p></div>
+      <div class="card" data-reveal style="--d:0.08s"><div class="ico">%</div><h3>Доля выручки терминала</h3><p>Заведение получает долю выручки терминала. <span class="todo">[УТОЧНИТЬ: условия и размер доли — публиковать только после подтверждения]</span></p></div>
+      <div class="card" data-reveal style="--d:0s"><div class="ico">0</div><h3>Персонал ничего не делает</h3><p>Сотрудникам не нужно выдавать пауэрбанки и отвечать за них: терминал работает сам.</p></div>
+      <div class="card" data-reveal style="--d:0.08s"><div class="ico">★</div><h3>Фирменный стиль площадки</h3><p>Терминал можно оформить в стиле вашего заведения.</p></div>
     </div>
   </div>
 </section>
 
 <section class="sheet sheet--white">
   <div class="wrap">
-    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Оборудование</span><h2>Какой терминал подойдёт</h2><p>Четыре типа терминалов — от компактного до самого вместительного.</p></div>
+    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Оборудование</span><h2>Какой терминал подойдёт</h2><p>Четыре типа терминалов — от компактного до самого вместительного.</p></div>
     <div class="grid grid--4">
-<div class="card term" data-reveal style="--d:0s"><div class="term__art"><svg viewBox="0 0 340 430" style="height:150px;width:auto" aria-hidden="true"><rect x="36" y="16" width="248" height="384" rx="32" fill="#fff" stroke="#DDE3F0" stroke-width="4"/><path d="M36 48a32 32 0 0 1 32-32h184a32 32 0 0 1 32 32v52H36z" fill="#FCDE31"/><g><rect x="60" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="290" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="290" width="92" height="50" rx="25" fill="#FCDE31"/></g></svg></div><b class="size">6 пауэрбанков</b><h3>S06</h3><p>Самый компактный.</p></div>
-<div class="card term" data-reveal style="--d:0.08s"><div class="term__art"><svg viewBox="0 0 340 430" style="height:150px;width:auto" aria-hidden="true"><rect x="36" y="16" width="248" height="384" rx="32" fill="#fff" stroke="#DDE3F0" stroke-width="4"/><path d="M36 48a32 32 0 0 1 32-32h184a32 32 0 0 1 32 32v52H36z" fill="#FCDE31"/><g><rect x="60" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="290" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="290" width="92" height="50" rx="25" fill="#FCDE31"/></g></svg></div><b class="size">8 пауэрбанков</b><h3>S08</h3><p>25×19×22 см, встаёт у кассы.</p></div>
-<div class="card term" data-reveal style="--d:0.16s"><div class="term__art"><svg viewBox="0 0 340 430" style="height:150px;width:auto" aria-hidden="true"><rect x="36" y="16" width="248" height="384" rx="32" fill="#fff" stroke="#DDE3F0" stroke-width="4"/><path d="M36 48a32 32 0 0 1 32-32h184a32 32 0 0 1 32 32v52H36z" fill="#FCDE31"/><g><rect x="60" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="290" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="290" width="92" height="50" rx="25" fill="#FCDE31"/></g></svg></div><b class="size">24 пауэрбанка</b><h3>S24</h3><p>Для мест с большим потоком.</p></div>
-<div class="card term" data-reveal style="--d:0.24s"><div class="term__art"><svg viewBox="0 0 340 430" style="height:150px;width:auto" aria-hidden="true"><rect x="36" y="16" width="248" height="384" rx="32" fill="#fff" stroke="#DDE3F0" stroke-width="4"/><path d="M36 48a32 32 0 0 1 32-32h184a32 32 0 0 1 32 32v52H36z" fill="#FCDE31"/><g><rect x="60" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="290" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="290" width="92" height="50" rx="25" fill="#FCDE31"/></g></svg></div><b class="size">48 пауэрбанков</b><h3>CS48</h3><p>Самый вместительный.</p></div></div>
-    <p style="margin-top:24px"><span class="todo">[УТОЧНИТЬ: какой терминал для каких площадок рекомендуется; габариты S06, S24, CS48]</span></p>
+<div class="card term" data-reveal style="--d:0s"><div class="term__art"><div class="slots" style="--c:2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">6 пауэрбанков</b><h3>S06</h3><p>Самый компактный.</p></div>
+<div class="card term" data-reveal style="--d:0.08s"><div class="term__art"><div class="slots" style="--c:2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">8 пауэрбанков</b><h3>S08</h3><p>25×19×22 см, встаёт у кассы.</p></div>
+<div class="card term" data-reveal style="--d:0.16s"><div class="term__art"><div class="slots" style="--c:4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">24 пауэрбанка</b><h3>S24</h3><p>Для мест с большим потоком.</p></div>
+<div class="card term" data-reveal style="--d:0.24s"><div class="term__art"><div class="slots" style="--c:6" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">48 пауэрбанков</b><h3>CS48</h3><p>Самый вместительный.</p></div></div>
+    <p style="margin-top:24px"><span class="todo">[УТОЧНИТЬ: какой терминал для каких площадок рекомендуется; габариты S06, S24, CS48]</span></p>
   </div>
 </section>
 
 <section class="sheet">
   <div class="wrap">
     <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Площадки</span><h2>Где ставим терминалы</h2></div>
-    <ul class="chips" data-reveal style="--d:0s"><li>Станции метро и транспортные узлы</li><li>Фитнес-клубы</li><li>Кафе, бары и рестораны</li><li>Торговые центры</li><li>Рынки</li><li>МФЦ</li></ul>
-    <div style="margin-top:56px" data-reveal style="--d:0s"><span class="eyebrow">Как проходит запуск</span><p><span class="todo">[УТОЧНИТЬ: этапы сотрудничества: от заявки до запуска терминала, сроки, требования к площадке]</span></p></div>
+    <ul class="chips" data-reveal style="--d:0s"><li>Станции метро и транспортные узлы</li><li>Фитнес-клубы</li><li>Кафе, бары и рестораны</li><li>Торговые центры</li><li>Рынки</li><li>МФЦ</li></ul>
+    <div style="margin-top:56px" data-reveal style="--d:0s"><span class="eyebrow">Как проходит запуск</span><p><span class="todo">[УТОЧНИТЬ: этапы сотрудничества: от заявки до запуска терминала, сроки, требования к площадке]</span></p></div>
   </div>
 </section>
 
@@ -79,22 +92,22 @@
     <div data-reveal style="--d:0s">
       <span class="eyebrow">Заявка</span>
       <h2>Оставьте заявку</h2>
-      <p class="lead">Расскажите о площадке — коммерческий отдел свяжется с вами в рабочее время (будни 9:00–18:00).</p>
+      <p class="lead">Расскажите о площадке — коммерческий отдел свяжется с вами в рабочее время (будни 9:00–18:00).</p>
       <ul>
         <li><a href="tel:+74951201876">8 (495) 120-18-76</a></li>
         <li><a href="mailto:office@energo.app">office@energo.app</a></li>
-        <li><a href="https://t.me/energo_business" rel="noopener">Telegram-канал для бизнеса</a></li>
+        <li><a href="https://t.me/energo_business" rel="noopener">Telegram-канал для бизнеса</a></li>
       </ul>
     </div>
     
 <div class="form-card" id="form" data-reveal style="--d:0.1s">
-  <h3>Заявка на установку терминала</h3>
+  <h3>Заявка на установку терминала</h3>
   <form class="form" data-form="business" novalidate>
-    <label class="f">Ваше имя *<input type="text" name="name" required autocomplete="name"></label><div class="form__row"><label class="f">Телефон *<input type="tel" name="phone" required autocomplete="tel" placeholder="+7"></label><label class="f">Email<input type="email" name="email"  autocomplete="email"></label></div><div class="form__row"><label class="f">Название заведения или сети *<input type="text" name="company" required ></label><label class="f">Город *<input type="text" name="city" required ></label></div><label class="f">Тип площадки<select name="venue_type"><option value="">Выберите</option><option>Станции метро и транспортные узлы</option><option>Фитнес-клубы</option><option>Кафе, бары и рестораны</option><option>Торговые центры</option><option>Рынки</option><option>МФЦ</option><option>Другое</option></select></label><label class="f">Комментарий<textarea name="comment"></textarea></label>
-    <div class="hp" aria-hidden="true"><label>Не заполняйте <input type="text" name="hp" tabindex="-1" autocomplete="off"></label></div>
+    <label class="f">Ваше имя *<input type="text" name="name" required autocomplete="name"></label><div class="form__row"><label class="f">Телефон *<input type="tel" name="phone" required autocomplete="tel" placeholder="+7"></label><label class="f">Email<input type="email" name="email"  autocomplete="email"></label></div><div class="form__row"><label class="f">Название заведения или сети *<input type="text" name="company" required ></label><label class="f">Город *<input type="text" name="city" required ></label></div><label class="f">Тип площадки<select name="venue_type"><option value="">Выберите</option><option>Станции метро и транспортные узлы</option><option>Фитнес-клубы</option><option>Кафе, бары и рестораны</option><option>Торговые центры</option><option>Рынки</option><option>МФЦ</option><option>Другое</option></select></label><label class="f">Комментарий<textarea name="comment"></textarea></label>
+    <div class="hp" aria-hidden="true"><label>Не заполняйте <input type="text" name="hp" tabindex="-1" autocomplete="off"></label></div>
     
 <label class="consent"><input type="checkbox" name="consent" required>
-  <span>Я даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank">Политикой обработки персональных данных</a>.</span></label>
+  <span>Я даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank">Политикой обработки персональных данных</a>.</span></label>
     <button class="btn btn--yellow" type="submit" style="color:var(--ink)">Отправить заявку</button>
     <div class="form__msg" role="status" aria-live="polite"></div>
   </form>
@@ -109,11 +122,26 @@
         <div>
           <a class="logo" href="index.html" aria-label="EnerGO"><img src="assets/img/logo.svg" alt="EnerGO" width="187" height="39"></a>
           <p class="footer__tagline">Сервис зарядки гаджетов. Заряжай на ходу!</p>
+          <div class="footer__stores">
+            <a href="https://apps.apple.com/ru/app/id1507114521" rel="noopener">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.energo.rnapp" rel="noopener">Google Play</a>
+            <a href="https://www.rustore.ru/catalog/app/com.energo.rnapp" rel="noopener">RuStore</a>
+          </div>
+        </div>
+        <div>
+          <h4>Разделы</h4>
+          <ul>
+            <li><a href="business.html">Для бизнеса</a></li>
+            <li><a href="franchise.html">Франшиза</a></li>
+            <li><a href="events.html">Для мероприятий</a></li>
+            <li><a href="partners.html">Партнёры</a></li>
+            <li><a href="faq.html">Частые вопросы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
         </div>
         <div>
           <h4>Связаться</h4>
           <ul>
-            <li><a href="faq.html">Частые вопросы</a></li>
             <li>Поддержка: <a href="tel:+78006004264">8 (800) 600-42-64</a></li>
             <li><a href="mailto:support@energo.app">support@energo.app</a></li>
             <li><a href="https://t.me/HelpEnerGO_bot" rel="noopener">Telegram-бот поддержки</a></li>

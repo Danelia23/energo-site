@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EnerGO — аренда пауэрбанков. Пауэрбанк рядом</title>
 <meta name="description" content="EnerGO — сервис шеринга пауэрбанков. Найди терминал в приложении, возьми пауэрбанк и верни в любой терминал сети.">
-<meta name="theme-color" content="#FCDE31">
+<meta name="theme-color" content="#0E0E0E">
+<meta property="og:site_name" content="EnerGO">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="EnerGO — аренда пауэрбанков. Пауэрбанк рядом">
+<meta property="og:description" content="EnerGO — сервис шеринга пауэрбанков. Найди терминал в приложении, возьми пауэрбанк и верни в любой терминал сети.">
+<!-- [УТОЧНИТЬ: домен сайта] — после публикации добавить og:url, og:image (абсолютная ссылка на картинку 1200×630), canonical и sitemap.xml -->
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnerGO","legalName":"ООО «ЭНЕРГО ТЕХНОЛОДЖИС»","taxID":"5024194594","telephone":"+7-800-600-42-64","email":"support@energo.app","address":{"@type":"PostalAddress","addressCountry":"RU","addressLocality":"Москва","streetAddress":"пл. Калужская, д. 1, к. 1, помещ. 1П","postalCode":"119049"}}</script>
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
 <script>document.documentElement.classList.add("js")</script>
@@ -14,20 +22,24 @@
 <a class="skip" href="#main">К содержимому</a>
 <header class="header">
   <div class="wrap header__in">
-    <a class="logo" href="index.html" aria-label="EnerGO — на главную"><img class="logo__w" src="assets/img/logo-white.svg" alt="EnerGO" width="187" height="39"><img class="logo__d" src="assets/img/logo.svg" alt="" aria-hidden="true" width="187" height="39"></a>
+    <a class="logo" href="index.html" aria-label="EnerGO — на главную"><img class="logo__w" src="assets/img/logo-white.svg" alt="EnerGO" width="187" height="39"></a>
     <nav class="nav" id="nav" data-open="false" aria-label="Основное меню">
       <a href="business.html">Для бизнеса</a>
       <a href="franchise.html">Франшиза</a>
       <a href="events.html">Для мероприятий</a>
       <a href="partners.html">Партнёры</a>
       <a class="nav__mobile" href="contacts.html">Контакты</a>
+      <a class="nav__app" href="https://onelink.to/35pdxt">Скачать приложение</a>
     </nav>
-    <a class="header__phone" href="tel:+78006004264">8 (800) 600-42-64</a>
+    <div class="header__act">
+      <a class="header__phone" href="tel:+78006004264">8 (800) 600-42-64</a>
+      <a class="btn btn--yellow btn--sm header__cta" href="https://onelink.to/35pdxt">Скачать приложение</a>
+    </div>
     <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
   </div>
 </header>
-<main id="main">
 
+<main id="main">
 <section class="hero">
   <!-- Фон: положите фото в assets/img/hero.jpg. Для видео вместо фото: <video class="hero__video" autoplay muted loop playsinline src="assets/img/hero.mp4"></video> -->
   <div class="hero__bg" style="--hero-img:url('../assets/img/hero.jpg')" aria-hidden="true"></div>
@@ -50,19 +62,24 @@
   <div class="wrap hero__in">
     <div class="hero__text">
       
-      <h1>Пауэрбанк рядом —<br>Заряжай на ходу!</h1>
+      <h1>Пауэрбанк рядом —<br>Заряжай на ходу!</h1>
       
       <div class="btn-row"><a class="btn btn--yellow" href="https://onelink.to/35pdxt"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> Скачать приложение</a><a class="btn btn--grey" href="business.html#form">Стать партнёром</a></div>
       
+      <ul class="hero__facts" aria-label="EnerGO в цифрах">
+        <li><b>15 000+</b><span>станций</span></li>
+        <li><b>180+</b><span>городов</span></li>
+        <li><b>3 млн+</b><span>пользователей</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section class="sheet" id="how">
   <div class="wrap">
-    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Четыре шага</span><h2>Садится зарядка? Возьми пауэрбанк!</h2><p>Через минуту телефон снова в деле.</p></div>
+    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Четыре шага</span><h2>Садится зарядка? Возьми пауэрбанк!</h2><p>Через минуту телефон снова в деле.</p></div>
     <ol class="steps">
-      <li class="step" data-reveal style="--d:0s"><span class="step__n">01</span><h3>Установи приложение</h3><p>Скачай EnerGO в App Store, Google Play или RuStore, войди по номеру телефона и привяжи способ оплаты.</p><svg class="phone" viewBox="0 0 240 470" aria-hidden="true" focusable="false">
+      <li class="step" data-reveal style="--d:0s"><span class="step__n">01</span><h3>Установи приложение</h3><p>Скачай EnerGO в App Store, Google Play или RuStore, войди по номеру телефона и привяжи способ оплаты.</p><svg class="phone" viewBox="0 0 240 470" aria-hidden="true" focusable="false">
   <defs><clipPath id="pc1"><rect x="9" y="9" width="222" height="452" rx="33"/></clipPath></defs>
   <rect x="1" y="1" width="238" height="468" rx="42" fill="#000"/>
   <rect x="3.5" y="3.5" width="233" height="463" rx="39.5" fill="none" stroke="#3a3f43" stroke-width="2"/>
@@ -74,7 +91,7 @@
   <rect x="62" y="364" width="116" height="8" rx="4" fill="#ECECEC"/><rect x="82" y="382" width="76" height="8" rx="4" fill="#ECECEC"/></g>
   <rect x="84" y="17" width="72" height="22" rx="11" fill="#000"/>
 </svg></li>
-      <li class="step" data-reveal style="--d:0.08s"><span class="step__n">02</span><h3>Найди терминал</h3><p>Выбери ближайший терминал на карте в приложении.</p><svg class="phone" viewBox="0 0 240 470" aria-hidden="true" focusable="false">
+      <li class="step" data-reveal style="--d:0.08s"><span class="step__n">02</span><h3>Найди терминал</h3><p>Выбери ближайший терминал на карте в приложении.</p><svg class="phone" viewBox="0 0 240 470" aria-hidden="true" focusable="false">
   <defs><clipPath id="pc2"><rect x="9" y="9" width="222" height="452" rx="33"/></clipPath></defs>
   <rect x="1" y="1" width="238" height="468" rx="42" fill="#000"/>
   <rect x="3.5" y="3.5" width="233" height="463" rx="39.5" fill="none" stroke="#3a3f43" stroke-width="2"/>
@@ -87,7 +104,7 @@
   <g transform="translate(40 405)" fill="none" stroke="#000" stroke-width="2.2"><rect x="0" y="0" width="9" height="9" rx="1.5"/><rect x="14" y="0" width="9" height="9" rx="1.5"/><rect x="0" y="14" width="9" height="9" rx="1.5"/><path d="M14 18 H23 M18.5 14 V23"/></g></g>
   <rect x="84" y="17" width="72" height="22" rx="11" fill="#000"/>
 </svg></li>
-      <li class="step" data-reveal style="--d:0.16s"><span class="step__n">03</span><h3>Возьми пауэрбанк</h3><p>Отсканируй QR-код на терминале или введи его номер вручную. Деньги спишутся до начала аренды, и примерно через 10 секунд терминал выдаст пауэрбанк.</p><svg class="phone" viewBox="0 0 240 470" aria-hidden="true" focusable="false">
+      <li class="step" data-reveal style="--d:0.16s"><span class="step__n">03</span><h3>Возьми пауэрбанк</h3><p>Отсканируй QR-код на терминале или введи его номер вручную. Деньги спишутся до начала аренды, и примерно через 10 секунд терминал выдаст пауэрбанк.</p><svg class="phone" viewBox="0 0 240 470" aria-hidden="true" focusable="false">
   <defs><clipPath id="pc3"><rect x="9" y="9" width="222" height="452" rx="33"/></clipPath></defs>
   <rect x="1" y="1" width="238" height="468" rx="42" fill="#000"/>
   <rect x="3.5" y="3.5" width="233" height="463" rx="39.5" fill="none" stroke="#3a3f43" stroke-width="2"/>
@@ -99,7 +116,7 @@
   <rect x="40" y="392" width="160" height="42" rx="21" fill="rgba(255,255,255,.14)"/><text x="120" y="418" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Ввести номер вручную</text></g>
   <rect x="84" y="17" width="72" height="22" rx="11" fill="#000"/>
 </svg></li>
-      <li class="step" data-reveal style="--d:0.24s"><span class="step__n">04</span><h3>Верни где удобно</h3><p>Вставь пауэрбанк в свободную ячейку любого терминала сети.</p><svg class="phone" viewBox="0 0 240 470" aria-hidden="true" focusable="false">
+      <li class="step" data-reveal style="--d:0.24s"><span class="step__n">04</span><h3>Верни где удобно</h3><p>Вставь пауэрбанк в свободную ячейку любого терминала сети.</p><svg class="phone" viewBox="0 0 240 470" aria-hidden="true" focusable="false">
   <defs><clipPath id="pc4"><rect x="9" y="9" width="222" height="452" rx="33"/></clipPath></defs>
   <rect x="1" y="1" width="238" height="468" rx="42" fill="#000"/>
   <rect x="3.5" y="3.5" width="233" height="463" rx="39.5" fill="none" stroke="#3a3f43" stroke-width="2"/>
@@ -118,15 +135,14 @@
 <section class="sheet sheet--white" id="why">
   <div class="wrap">
     <div class="head-row">
-      <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Почему EnerGO</span><h2>Заряжай на ходу!</h2><p>Терминалы рядом, провода внутри, вернуть можно в любой точке сети.</p></div>
-      <div class="pills" data-reveal style="--d:0.1s"><span class="pill pill--dark">180+ городов</span><span class="pill">3 кабеля</span></div>
+      <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Почему EnerGO</span><h2>Заряжай на ходу!</h2><p>Терминалы рядом, провода внутри, вернуть можно в любой точке сети.</p></div>
     </div>
     <div class="why">
       <article class="wcard wcard--map" data-reveal style="--d:0s">
         <div class="wcard__text">
           <span class="wcard__tag">Сеть</span>
-          <h3>15 000+ станций<br>в 180+ городах</h3>
-          <p>Метро и транспортные узлы, кафе, бары и рестораны, фитнес-клубы, торговые центры, рынки, МФЦ — и не только.</p>
+          <h3>15 000+ станций<br>в 180+ городах</h3>
+          <p>Метро и транспортные узлы, кафе, бары и рестораны, фитнес-клубы, торговые центры, рынки, МФЦ — и не только.</p>
           <a class="btn btn--navy btn--sm" href="#where">Найти ближайший</a>
         </div>
         <div class="wcard__phone"><svg class="phone" viewBox="0 0 240 470" aria-hidden="true" focusable="false">
@@ -144,9 +160,9 @@
 </svg></div>
       </article>
       <article class="wcard wcard--cables" data-reveal style="--d:0.08s">
-        <span class="wcard__tag">Три в одном</span>
-        <h3>Провода в комплекте</h3>
-        <p>Type-C, Lightning и Micro-USB уже встроены в пауэрбанк.</p>
+        <span class="wcard__tag">Три в одном</span>
+        <h3>Провода в комплекте</h3>
+        <p>Type-C, Lightning и Micro-USB уже встроены в пауэрбанк.</p>
         <ul class="plugs">
           <li><span class="plug"><svg viewBox="0 0 96 96" aria-hidden="true" focusable="false"><rect x="30" y="10" width="36" height="34" rx="14" fill="none" stroke="#000" stroke-width="5"/><rect x="40" y="22" width="16" height="6" rx="3" fill="#000"/><rect x="26" y="46" width="44" height="30" rx="8" fill="#000"/><rect x="38" y="76" width="20" height="10" rx="4" fill="#000" opacity=".55"/></svg></span>Type-C</li>
           <li><span class="plug"><svg viewBox="0 0 96 96" aria-hidden="true" focusable="false"><rect x="33" y="10" width="30" height="34" rx="4" fill="none" stroke="#000" stroke-width="5"/><path d="M41 18v14M48 18v14M55 18v14" stroke="#000" stroke-width="3.5" stroke-linecap="round"/><rect x="26" y="46" width="44" height="30" rx="8" fill="#000"/><rect x="38" y="76" width="20" height="10" rx="4" fill="#000" opacity=".55"/></svg></span>Lightning</li>
@@ -157,53 +173,36 @@
         <div class="wcard__text">
           <span class="wcard__tag">Любой терминал</span>
           <h3>Легко вернуть</h3>
-          <p>Верни пауэрбанк в любой терминал сети: вставь его в свободную ячейку.</p>
+          <p>Верни пауэрбанк в любой терминал сети: вставь его в свободную ячейку.</p>
         </div>
-        <div class="wcard__art">
-<svg class="" viewBox="0 0 340 430" role="img" aria-label="Терминал EnerGO с пауэрбанком">
-  <ellipse cx="160" cy="414" rx="116" ry="10" fill="rgba(0,0,0,.35)"/>
-  <rect x="36" y="16" width="248" height="384" rx="32" fill="#fff"/>
-  <path d="M36 48a32 32 0 0 1 32-32h184a32 32 0 0 1 32 32v52H36z" fill="#FCDE31"/>
-  <text x="60" y="78" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="36" fill="#000000" letter-spacing="-1.5">ener<tspan fill="#E30613">go</tspan>≡</text>
-  <rect x="60" y="118" width="80" height="80" rx="10" fill="#000000"/>
-  <g fill="#fff"><rect x="68" y="126" width="20" height="20" rx="3"/><rect x="112" y="126" width="20" height="20" rx="3"/><rect x="68" y="170" width="20" height="20" rx="3"/><rect x="96" y="150" width="8" height="8"/><rect x="108" y="162" width="10" height="10"/><rect x="122" y="176" width="10" height="14"/><rect x="94" y="176" width="8" height="8"/></g>
-  <rect x="152" y="118" width="108" height="80" rx="12" fill="#EEF1F8"/>
-  <rect x="166" y="134" width="64" height="8" rx="4" fill="#C7CEE3"/><rect x="166" y="152" width="80" height="8" rx="4" fill="#C7CEE3"/><rect x="166" y="170" width="44" height="8" rx="4" fill="#FCDE31"/>
-  <rect x="60" y="218" width="92" height="38" rx="19" fill="#FCDE31"/><circle cx="80" cy="237" r="6" fill="#3DDC6B"/><rect x="168" y="218" width="92" height="38" rx="19" fill="#FCDE31"/><circle cx="188" cy="237" r="6" fill="#3DDC6B"/><rect x="60" y="270" width="92" height="38" rx="19" fill="#FCDE31"/><circle cx="80" cy="289" r="6" fill="#3DDC6B"/><rect x="168" y="270" width="92" height="38" rx="19" fill="#FCDE31"/><circle cx="188" cy="289" r="6" fill="#3DDC6B"/><rect x="60" y="322" width="92" height="38" rx="19" fill="#FCDE31"/><circle cx="80" cy="341" r="6" fill="#3DDC6B"/><rect x="168" y="322" width="92" height="38" rx="19" fill="#FCDE31"/><circle cx="188" cy="341" r="6" fill="#3DDC6B"/>
-  <g class="pb" transform="rotate(16 262 130)">
-    <rect x="212" y="30" width="100" height="196" rx="20" fill="#FCDE31" stroke="#000000" stroke-width="5"/>
-    <rect x="228" y="46" width="68" height="10" rx="5" fill="#000000" opacity=".2"/>
-    <text x="262" y="150" transform="rotate(-90 262 150)" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="30" fill="#000000" letter-spacing="-1">ener<tspan fill="#E30613">go</tspan></text>
-    <rect x="236" y="200" width="52" height="8" rx="4" fill="#000000" opacity=".2"/>
-  </g>
-</svg></div>
+        <div class="wcard__art"><img src="assets/img/terminal-card.webp" alt="Терминал EnerGO" width="720" height="840" loading="lazy"></div>
       </article>
     </div>
     <div class="facts">
-      <div class="fact" data-reveal style="--d:0s"><b>3 млн+</b><span>пользователей</span></div>
-      <div class="fact" data-reveal style="--d:0.06s"><b>5000 мА·ч</b><span>заряжает телефон до 100% примерно за 2 часа</span></div>
-      <div class="fact" data-reveal style="--d:0.12s"><b>~10 секунд</b><span>до выдачи после списания денег</span></div>
-      <div class="fact" data-reveal style="--d:0.18s"><b>до 4</b><span>пауэрбанков на один аккаунт</span></div>
+      <div class="fact" data-reveal style="--d:0s"><b>3 млн+</b><span>пользователей</span></div>
+      <div class="fact" data-reveal style="--d:0.06s"><b>5000 мА·ч</b><span>заряжает телефон до 100% примерно за 2 часа</span></div>
+      <div class="fact" data-reveal style="--d:0.12s"><b>~10 секунд</b><span>до выдачи после списания денег</span></div>
+      <div class="fact" data-reveal style="--d:0.18s"><b>до 4</b><span>пауэрбанков на один аккаунт</span></div>
     </div>
   </div>
 </section>
 
 <section class="sheet" id="tariffs">
   <div class="wrap">
-    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Тарифы</span><h2>Понятная цена без сюрпризов</h2><p>Деньги списываются до начала аренды. Оплата только безналичная.</p></div>
+    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Тарифы</span><h2>Понятная цена без сюрпризов</h2><p>Деньги списываются до начала аренды. Оплата только безналичная.</p></div>
     <div class="tariff">
       <div class="tariff__main" data-reveal style="--d:0s">
-        <div class="tariff__price">150 ₽<small>за первый час</small></div>
+        <div class="tariff__price">150 ₽<small>за первый час</small></div>
         <ul class="tariff__rows">
-          <li>Остаток суток <b>100 ₽</b></li>
-          <li>Итого за 24 часа <b>250 ₽</b></li>
-          <li>Далее, за каждые сутки <b>250 ₽</b></li>
+          <li>Остаток суток <b>100 ₽</b></li>
+          <li>Итого за 24 часа <b>250 ₽</b></li>
+          <li>Далее, за каждые сутки <b>250 ₽</b></li>
         </ul>
-        <p class="tariff__note">В отдельных заведениях цена отличается. Актуальный тариф всегда показан на терминале и в приложении.</p>
+        <p class="tariff__note">В отдельных заведениях цена отличается. Актуальный тариф всегда показан на терминале и в приложении.</p>
       </div>
       <div class="tariff__side" data-reveal style="--d:0.1s">
-        <h3>Почему тариф суточный, если заряда хватает на 2 часа?</h3>
-        <p>Чтобы ты спокойно вернул пауэрбанк тогда и там, где тебе удобно, — без спешки и поиска ближайшего терминала.</p>
+        <h3>Почему тариф суточный, если заряда хватает на 2 часа?</h3>
+        <p>Чтобы ты спокойно вернул пауэрбанк тогда и там, где тебе удобно, — без спешки и поиска ближайшего терминала.</p>
         <a class="btn btn--navy" href="https://onelink.to/35pdxt">Скачать приложение</a>
       </div>
     </div>
@@ -214,26 +213,41 @@
   <div class="wrap">
     <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Где найти</span><h2>Тут есть зарядка!</h2><p>Терминалы EnerGO стоят там, где обычно садится телефон.</p></div>
     <ul class="chips" data-reveal style="--d:0s">
-      <li>Станции метро и транспортные узлы</li><li>Фитнес-клубы</li><li>Кафе, бары и рестораны</li><li>Торговые центры</li><li>Рынки</li><li>МФЦ</li>
+      <li>Станции метро и транспортные узлы</li><li>Фитнес-клубы</li><li>Кафе, бары и рестораны</li><li>Торговые центры</li><li>Рынки</li><li>МФЦ</li>
     </ul>
     <div class="map-box" id="map-box" data-reveal style="--d:0.1s">
+      <div class="coverage">
+        <div class="coverage__text">
+          <span class="coverage__big">15 000+</span>
+          <span class="coverage__cap">станций в 180+ городах</span>
+          <p>Ближайший терминал выбирай на карте в приложении EnerGO.</p>
+          <a class="btn btn--yellow" href="https://onelink.to/35pdxt">Открыть в приложении</a>
+          <span class="todo">[УТОЧНИТЬ: список терминалов с координатами и адресами — по нему на сайте включится живая карта с поиском]</span>
+        </div>
+        <div class="coverage__art" aria-hidden="true">
+          <i class="pinpt pinpt--lg" style="--x:56%;--y:46%"></i>
+          <i class="pinpt" style="--x:30%;--y:28%;--t:.6s"></i><i class="pinpt" style="--x:74%;--y:24%;--t:1.2s"></i>
+          <i class="pinpt" style="--x:42%;--y:68%;--t:1.8s"></i><i class="pinpt" style="--x:80%;--y:62%;--t:.3s"></i>
+          <i class="pinpt" style="--x:20%;--y:54%;--t:2.2s"></i><i class="pinpt" style="--x:64%;--y:82%;--t:1s"></i>
+          <i class="pinpt" style="--x:88%;--y:40%;--t:2.6s"></i><i class="pinpt" style="--x:46%;--y:14%;--t:1.5s"></i>
+        </div>
+      </div>
       <div id="map" aria-label="Карта терминалов EnerGO"></div>
       <div class="map-search">
-        <h3>Найти терминал с ближайшим пауэрбанком</h3>
+        <h3>Найти терминал с ближайшим пауэрбанком</h3>
         <form id="map-search"><input type="text" placeholder="Поиск по адресу" aria-label="Поиск по адресу"><button class="btn btn--yellow btn--sm" type="submit">Найти</button></form>
       </div>
-      <div class="map-empty" id="map-empty" hidden><p>Точки терминалов появятся здесь после подключения данных. <span class="todo">[УТОЧНИТЬ: список терминалов с координатами и адресами для карты]</span></p></div>
     </div>
   </div>
 </section>
 
 <section class="sheet sheet--navy">
   <div class="wrap">
-    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">EnerGO для бизнеса</span><h2>Три способа работать с нами</h2><p>Выберите свой формат.</p></div>
+    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">EnerGO для бизнеса</span><h2>Три способа работать с нами</h2><p>Выберите свой формат.</p></div>
     <div class="cards3">
-      <a class="pcard" href="business.html" data-reveal style="--d:0s"><span class="tag">Площадкам</span><h3>Терминал в вашем заведении</h3><p>Оборудование, установка и обслуживание — за счёт EnerGO. Заведение получает долю выручки терминала.</p><span class="go">→</span></a>
-      <a class="pcard" href="franchise.html" data-reveal style="--d:0.08s"><span class="tag">Франшиза</span><h3>Своя сеть в своём городе</h3><p>Инвестиции от 3 до 20 млн ₽, роялти 20%, без паушального взноса.</p><span class="go">→</span></a>
-      <a class="pcard" href="partners.html" data-reveal style="--d:0.16s"><span class="tag">Партнёры</span><h3>Метро, МФЦ и сети заведений</h3><p>С кем уже работает EnerGO и как стать частью сети.</p><span class="go">→</span></a>
+      <a class="pcard" href="business.html" data-reveal style="--d:0s"><span class="tag">Площадкам</span><h3>Терминал в вашем заведении</h3><p>Оборудование, установка и обслуживание — за счёт EnerGO. Заведение получает долю выручки терминала.</p><span class="go">→</span></a>
+      <a class="pcard" href="franchise.html" data-reveal style="--d:0.08s"><span class="tag">Франшиза</span><h3>Своя сеть в своём городе</h3><p>Инвестиции от 3 до 20 млн ₽, роялти 20%, без паушального взноса.</p><span class="go">→</span></a>
+      <a class="pcard" href="partners.html" data-reveal style="--d:0.16s"><span class="tag">Партнёры</span><h3>Метро, МФЦ и сети заведений</h3><p>С кем уже работает EnerGO и как стать частью сети.</p><span class="go">→</span></a>
     </div>
   </div>
 </section>
@@ -243,8 +257,8 @@
     <div class="tg" data-reveal style="--d:0s">
       <div class="tg__logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11.5 21 4l-3.2 16-5.3-3.9-2.6 2.5.3-4.1L18 7.5 7.3 13.7 3 12.3z"/></svg></div>
       <div>
-        <h2>Присоединяйтесь к нашему сообществу в Telegram</h2>
-        <a class="btn btn--navy" href="#" rel="noopener">Присоединиться</a> <span class="todo">[УТОЧНИТЬ: ссылка на Telegram-сообщество для пользователей]</span>
+        <h2>Присоединяйтесь к нашему сообществу в Telegram</h2>
+        <a class="btn btn--navy" href="#" rel="noopener" data-todo>Присоединиться</a><br><span class="todo">[УТОЧНИТЬ: ссылка на Telegram-сообщество для пользователей]</span>
       </div>
     </div>
   </div>
@@ -255,10 +269,10 @@
     <div class="head head--center" data-reveal style="--d:0s"><h2>Частые вопросы</h2></div>
     <div class="faq" data-reveal style="--d:0.05s">
       <div class="faq__panel is-active">
-        <details open><summary>Как взять пауэрбанк?</summary><div class="ans">Скачай приложение EnerGO, войди по номеру телефона и привяжи способ оплаты. Найди терминал на карте, отсканируй QR-код на нём или введи номер терминала вручную. Деньги списываются до начала аренды, примерно через 10 секунд терминал выдаст пауэрбанк.</div></details>
-        <details><summary>Сколько это стоит?</summary><div class="ans">Базовый тариф: 150 ₽ за первый час, затем 100 ₽ за остаток суток (итого 250 ₽ за 24 часа), далее 250 ₽ в сутки. В отдельных заведениях цена отличается: актуальный тариф всегда показан на терминале и в приложении. Оплата только безналичная.</div></details>
-        <details><summary>Как вернуть пауэрбанк?</summary><div class="ans">В любой терминал сети: вставь пауэрбанк в свободную ячейку.</div></details>
-        <details><summary>Какие телефоны можно зарядить?</summary><div class="ans">В пауэрбанк встроены три кабеля: Type-C, Lightning и Micro-USB. <span class="todo">[УТОЧНИТЬ: уточнить формулировку про совместимость с устройствами]</span></div></details>
+        <details open><summary>Как взять пауэрбанк?</summary><div class="ans">Скачай приложение EnerGO, войди по номеру телефона и привяжи способ оплаты. Найди терминал на карте, отсканируй QR-код на нём или введи номер терминала вручную. Деньги списываются до начала аренды, примерно через 10 секунд терминал выдаст пауэрбанк.</div></details>
+        <details><summary>Сколько это стоит?</summary><div class="ans">Базовый тариф: 150 ₽ за первый час, затем 100 ₽ за остаток суток (итого 250 ₽ за 24 часа), далее 250 ₽ в сутки. В отдельных заведениях цена отличается: актуальный тариф всегда показан на терминале и в приложении. Оплата только безналичная.</div></details>
+        <details><summary>Как вернуть пауэрбанк?</summary><div class="ans">В любой терминал сети: вставь пауэрбанк в свободную ячейку.</div></details>
+        <details><summary>Какие телефоны можно зарядить?</summary><div class="ans">В пауэрбанк встроены три кабеля: Type-C, Lightning и Micro-USB. <span class="todo">[УТОЧНИТЬ: уточнить формулировку про совместимость с устройствами]</span></div></details>
       </div>
     </div>
     <div class="faq__more" data-reveal style="--d:0s">
@@ -270,8 +284,8 @@
 <section class="cta">
   <div class="wrap cta__in">
     <div data-reveal style="--d:0s">
-      <h2>Готов быть всегда <span>на связи?</span></h2>
-      <p>Скачивай мобильное приложение EnerGO из App Store, Google Play или RuStore.</p>
+      <h2>Готов быть всегда <span>на связи?</span></h2>
+      <p>Скачивай мобильное приложение EnerGO из App Store, Google Play или RuStore.</p>
       
 <div class="stores">
   <a class="store" href="https://apps.apple.com/ru/app/id1507114521" rel="noopener"><span><small>Загрузите в</small>App Store</span></a>
@@ -290,11 +304,26 @@
         <div>
           <a class="logo" href="index.html" aria-label="EnerGO"><img src="assets/img/logo.svg" alt="EnerGO" width="187" height="39"></a>
           <p class="footer__tagline">Сервис зарядки гаджетов. Заряжай на ходу!</p>
+          <div class="footer__stores">
+            <a href="https://apps.apple.com/ru/app/id1507114521" rel="noopener">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.energo.rnapp" rel="noopener">Google Play</a>
+            <a href="https://www.rustore.ru/catalog/app/com.energo.rnapp" rel="noopener">RuStore</a>
+          </div>
+        </div>
+        <div>
+          <h4>Разделы</h4>
+          <ul>
+            <li><a href="business.html">Для бизнеса</a></li>
+            <li><a href="franchise.html">Франшиза</a></li>
+            <li><a href="events.html">Для мероприятий</a></li>
+            <li><a href="partners.html">Партнёры</a></li>
+            <li><a href="faq.html">Частые вопросы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
         </div>
         <div>
           <h4>Связаться</h4>
           <ul>
-            <li><a href="faq.html">Частые вопросы</a></li>
             <li>Поддержка: <a href="tel:+78006004264">8 (800) 600-42-64</a></li>
             <li><a href="mailto:support@energo.app">support@energo.app</a></li>
             <li><a href="https://t.me/HelpEnerGO_bot" rel="noopener">Telegram-бот поддержки</a></li>

@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Партнёры EnerGO — метро, МФЦ и сети заведений</title>
 <meta name="description" content="С EnerGO работают Московский метрополитен, МФЦ и сети заведений. Станьте партнёром — разместите терминал.">
-<meta name="theme-color" content="#FCDE31">
+<meta name="theme-color" content="#0E0E0E">
+<meta property="og:site_name" content="EnerGO">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Партнёры EnerGO — метро, МФЦ и сети заведений">
+<meta property="og:description" content="С EnerGO работают Московский метрополитен, МФЦ и сети заведений. Станьте партнёром — разместите терминал.">
+<!-- [УТОЧНИТЬ: домен сайта] — после публикации добавить og:url, og:image (абсолютная ссылка на картинку 1200×630), canonical и sitemap.xml -->
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnerGO","legalName":"ООО «ЭНЕРГО ТЕХНОЛОДЖИС»","taxID":"5024194594","telephone":"+7-800-600-42-64","email":"support@energo.app","address":{"@type":"PostalAddress","addressCountry":"RU","addressLocality":"Москва","streetAddress":"пл. Калужская, д. 1, к. 1, помещ. 1П","postalCode":"119049"}}</script>
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
 <script>document.documentElement.classList.add("js")</script>
@@ -14,28 +22,33 @@
 <a class="skip" href="#main">К содержимому</a>
 <header class="header">
   <div class="wrap header__in">
-    <a class="logo" href="index.html" aria-label="EnerGO — на главную"><img class="logo__w" src="assets/img/logo-white.svg" alt="EnerGO" width="187" height="39"><img class="logo__d" src="assets/img/logo.svg" alt="" aria-hidden="true" width="187" height="39"></a>
+    <a class="logo" href="index.html" aria-label="EnerGO — на главную"><img class="logo__w" src="assets/img/logo-white.svg" alt="EnerGO" width="187" height="39"></a>
     <nav class="nav" id="nav" data-open="false" aria-label="Основное меню">
       <a href="business.html">Для бизнеса</a>
       <a href="franchise.html">Франшиза</a>
       <a href="events.html">Для мероприятий</a>
       <a href="partners.html" aria-current="page">Партнёры</a>
       <a class="nav__mobile" href="contacts.html">Контакты</a>
+      <a class="nav__app" href="https://onelink.to/35pdxt">Скачать приложение</a>
     </nav>
-    <a class="header__phone" href="tel:+78006004264">8 (800) 600-42-64</a>
+    <div class="header__act">
+      <a class="header__phone" href="tel:+78006004264">8 (800) 600-42-64</a>
+      <a class="btn btn--yellow btn--sm header__cta" href="https://onelink.to/35pdxt">Скачать приложение</a>
+    </div>
     <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
   </div>
 </header>
-<main id="main">
 
+<main id="main">
 <section class="hero hero--page">
   <!-- Фон: положите фото в assets/img/hero-partners.jpg. Для видео вместо фото: <video class="hero__video" autoplay muted loop playsinline src="assets/img/hero.mp4"></video> -->
   <div class="hero__bg" style="--hero-img:url('../assets/img/hero-partners.jpg')" aria-hidden="true"></div>
+    <div class="hero__art hero__art--card" aria-hidden="true"><img src="assets/img/terminal-card.webp" alt="" width="720" height="840"></div>
   <div class="wrap hero__in">
     <div class="hero__text">
       
       <h1>Нам доверяют</h1>
-      <p class="hero__lead">Терминалы EnerGO работают в метро, МФЦ, кафе и ресторанах.</p>
+      <p class="hero__lead">Терминалы EnerGO работают в метро, МФЦ, кафе и ресторанах.</p>
       <div class="btn-row"><a class="btn btn--yellow" href="business.html#form">Стать партнёром</a></div>
       
     </div>
@@ -44,7 +57,7 @@
 
 <section class="sheet">
   <div class="wrap">
-    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Партнёры</span><h2>С нами работают</h2></div>
+    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Партнёры</span><h2>С нами работают</h2></div>
     <div class="logos">
       <div class="logo-tile" data-reveal style="--d:0s"><img src="assets/partners/metro.svg" alt="Московский метрополитен" onerror="this.replaceWith(document.createTextNode('Московский метрополитен'))"></div>
       <div class="logo-tile" data-reveal style="--d:0.05s"><img src="assets/partners/shokoladnitsa.svg" alt="Шоколадница" onerror="this.replaceWith(document.createTextNode('Шоколадница'))"></div>
@@ -54,28 +67,28 @@
       <div class="logo-tile" data-reveal style="--d:0.25s"><img src="assets/partners/kofe-haus.svg" alt="Кофе Хауз" onerror="this.replaceWith(document.createTextNode('Кофе Хауз'))"></div>
       <div class="logo-tile" data-reveal style="--d:0.30000000000000004s"><img src="assets/partners/mfc.svg" alt="МФЦ" onerror="this.replaceWith(document.createTextNode('МФЦ'))"></div>
     </div>
-    <p style="margin-top:18px;font-size:14px;color:var(--muted)">Положите логотипы в <code>assets/partners/</code> (имена файлов — как в коде страницы). Пока их нет, показывается название.</p>
+    <p style="margin-top:18px;font-size:14px;color:var(--muted)">Положите логотипы в <code>assets/partners/</code> (имена файлов — как в коде страницы). Пока их нет, показывается название.</p>
   </div>
 </section>
 
 <section class="sheet sheet--white">
   <div class="wrap">
-    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">История</span><h2>Как мы росли</h2></div>
+    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">История</span><h2>Как мы росли</h2></div>
     <ul class="timeline" style="max-width:720px" data-reveal style="--d:0s">
-      <li><b>2019</b><span>Первый терминал в Москве.</span></li>
-      <li><b>2020</b><span>Пилот с Московским метрополитеном, около 150 терминалов.</span></li>
-      <li><b>2021</b><span>Контракт на установку терминалов на каждой станции метро.</span></li>
-      <li><b>2022</b><span>Проект с МФЦ.</span></li>
+      <li><b>2019</b><span>Первый терминал в Москве.</span></li>
+      <li><b>2020</b><span>Пилот с Московским метрополитеном, около 150 терминалов.</span></li>
+      <li><b>2021</b><span>Контракт на установку терминалов на каждой станции метро.</span></li>
+      <li><b>2022</b><span>Проект с МФЦ.</span></li>
     </ul>
   </div>
 </section>
 
 <section class="sheet">
   <div class="wrap">
-    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Кейсы</span><h2>Что говорят партнёры</h2></div>
+    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Кейсы</span><h2>Что говорят партнёры</h2></div>
     <div class="grid grid--3">
       <div class="card" data-reveal style="--d:0s"><p><span class="todo">[УТОЧНИТЬ: кейс партнёра: название, задача, результат]</span></p></div>
-      <div class="card" data-reveal style="--d:0.08s"><p><span class="todo">[УТОЧНИТЬ: цитата партнёра с разрешением на публикацию]</span></p></div>
+      <div class="card" data-reveal style="--d:0.08s"><p><span class="todo">[УТОЧНИТЬ: цитата партнёра с разрешением на публикацию]</span></p></div>
       <div class="card" data-reveal style="--d:0.16s"><p><span class="todo">[УТОЧНИТЬ: кейс партнёра]</span></p></div>
     </div>
   </div>
@@ -84,8 +97,8 @@
 <section class="cta cta--center">
   <div class="wrap cta__in">
     <div data-reveal style="--d:0s">
-      <h2>Хотите терминал EnerGO у себя?</h2>
-      <p>Оборудование, установка и обслуживание — за счёт EnerGO.</p>
+      <h2>Хотите терминал EnerGO у себя?</h2>
+      <p>Оборудование, установка и обслуживание — за счёт EnerGO.</p>
       <a class="btn btn--yellow" href="business.html#form">Оставить заявку</a>
     </div>
   </div>
@@ -98,11 +111,26 @@
         <div>
           <a class="logo" href="index.html" aria-label="EnerGO"><img src="assets/img/logo.svg" alt="EnerGO" width="187" height="39"></a>
           <p class="footer__tagline">Сервис зарядки гаджетов. Заряжай на ходу!</p>
+          <div class="footer__stores">
+            <a href="https://apps.apple.com/ru/app/id1507114521" rel="noopener">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.energo.rnapp" rel="noopener">Google Play</a>
+            <a href="https://www.rustore.ru/catalog/app/com.energo.rnapp" rel="noopener">RuStore</a>
+          </div>
+        </div>
+        <div>
+          <h4>Разделы</h4>
+          <ul>
+            <li><a href="business.html">Для бизнеса</a></li>
+            <li><a href="franchise.html">Франшиза</a></li>
+            <li><a href="events.html">Для мероприятий</a></li>
+            <li><a href="partners.html">Партнёры</a></li>
+            <li><a href="faq.html">Частые вопросы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
         </div>
         <div>
           <h4>Связаться</h4>
           <ul>
-            <li><a href="faq.html">Частые вопросы</a></li>
             <li>Поддержка: <a href="tel:+78006004264">8 (800) 600-42-64</a></li>
             <li><a href="mailto:support@energo.app">support@energo.app</a></li>
             <li><a href="https://t.me/HelpEnerGO_bot" rel="noopener">Telegram-бот поддержки</a></li>

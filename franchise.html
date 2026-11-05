@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Франшиза EnerGO — стройте сеть пауэрбанков в своём городе</title>
 <meta name="description" content="Франшиза EnerGO: инвестиции от 3 до 20 млн ₽, роялти 20%, без паушального взноса, поставка за 1–3 недели, обучение и поддержка 24/7.">
-<meta name="theme-color" content="#FCDE31">
+<meta name="theme-color" content="#0E0E0E">
+<meta property="og:site_name" content="EnerGO">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Франшиза EnerGO — стройте сеть пауэрбанков в своём городе">
+<meta property="og:description" content="Франшиза EnerGO: инвестиции от 3 до 20 млн ₽, роялти 20%, без паушального взноса, поставка за 1–3 недели, обучение и поддержка 24/7.">
+<!-- [УТОЧНИТЬ: домен сайта] — после публикации добавить og:url, og:image (абсолютная ссылка на картинку 1200×630), canonical и sitemap.xml -->
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnerGO","legalName":"ООО «ЭНЕРГО ТЕХНОЛОДЖИС»","taxID":"5024194594","telephone":"+7-800-600-42-64","email":"support@energo.app","address":{"@type":"PostalAddress","addressCountry":"RU","addressLocality":"Москва","streetAddress":"пл. Калужская, д. 1, к. 1, помещ. 1П","postalCode":"119049"}}</script>
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
 <script>document.documentElement.classList.add("js")</script>
@@ -14,58 +22,63 @@
 <a class="skip" href="#main">К содержимому</a>
 <header class="header">
   <div class="wrap header__in">
-    <a class="logo" href="index.html" aria-label="EnerGO — на главную"><img class="logo__w" src="assets/img/logo-white.svg" alt="EnerGO" width="187" height="39"><img class="logo__d" src="assets/img/logo.svg" alt="" aria-hidden="true" width="187" height="39"></a>
+    <a class="logo" href="index.html" aria-label="EnerGO — на главную"><img class="logo__w" src="assets/img/logo-white.svg" alt="EnerGO" width="187" height="39"></a>
     <nav class="nav" id="nav" data-open="false" aria-label="Основное меню">
       <a href="business.html">Для бизнеса</a>
       <a href="franchise.html" aria-current="page">Франшиза</a>
       <a href="events.html">Для мероприятий</a>
       <a href="partners.html">Партнёры</a>
       <a class="nav__mobile" href="contacts.html">Контакты</a>
+      <a class="nav__app" href="https://onelink.to/35pdxt">Скачать приложение</a>
     </nav>
-    <a class="header__phone" href="tel:+78006004264">8 (800) 600-42-64</a>
+    <div class="header__act">
+      <a class="header__phone" href="tel:+78006004264">8 (800) 600-42-64</a>
+      <a class="btn btn--yellow btn--sm header__cta" href="https://onelink.to/35pdxt">Скачать приложение</a>
+    </div>
     <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
   </div>
 </header>
-<main id="main">
 
+<main id="main">
 <section class="hero hero--page">
   <!-- Фон: положите фото в assets/img/hero-franchise.jpg. Для видео вместо фото: <video class="hero__video" autoplay muted loop playsinline src="assets/img/hero.mp4"></video> -->
   <div class="hero__bg" style="--hero-img:url('../assets/img/hero-franchise.jpg')" aria-hidden="true"></div>
+    <div class="hero__art hero__art--pb" aria-hidden="true"><img src="assets/img/pb-front.webp" alt="" width="684" height="1500"></div>
   <div class="wrap hero__in">
     <div class="hero__text">
       
-      <h1>Стройте сеть EnerGO<br>в своём городе</h1>
-      <p class="hero__lead">Покупайте терминалы и развивайте сеть пауэрбанков вместе с сервисом, у которого 15 000+ станций в 180+ городах.</p>
-      <div class="btn-row"><a class="btn btn--yellow" href="#form">Записаться на встречу</a><a class="btn btn--grey" href="#">Скачать презентацию</a></div>
-      <p class="hero__note"><span class="todo">[УТОЧНИТЬ: PDF-презентация франшизы; обещания по доходности, например «от 150 000 ₽ в месяц» с макета Figma, публиковать только после подтверждения]</span></p>
+      <h1>Стройте сеть EnerGO<br>в своём городе</h1>
+      <p class="hero__lead">Покупайте терминалы и развивайте сеть пауэрбанков вместе с сервисом, у которого 15 000+ станций в 180+ городах.</p>
+      <div class="btn-row"><a class="btn btn--yellow" href="#form">Записаться на встречу</a><a class="btn btn--grey" href="#" data-todo>Скачать презентацию</a></div>
+      <p class="hero__note"><span class="todo">[УТОЧНИТЬ: PDF-презентация франшизы; обещания по доходности, например «от 150 000 ₽ в месяц» с макета Figma, публиковать только после подтверждения]</span></p>
     </div>
   </div>
 </section>
 
 <section class="sheet">
   <div class="wrap">
-    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Условия</span><h2>Всё прозрачно: цифры и сроки</h2></div>
+    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Условия</span><h2>Всё прозрачно: цифры и сроки</h2></div>
     <div class="bento">
-      <div class="tile tile--yellow tile--7" data-reveal style="--d:0s"><div class="big">от 3 до 20 млн ₽</div><h3>инвестиции</h3><p>В зависимости от города.</p></div>
-      <div class="tile tile--navy tile--5" data-reveal style="--d:0.08s"><div class="big" style="color:var(--yellow)">20%</div><h3>роялти от выручки</h3><p>Без паушального взноса.</p></div>
-      <div class="tile tile--4" data-reveal style="--d:0s"><div class="big">12+</div><h3>месяцев — окупаемость</h3><p>От 12 месяцев.</p></div>
-      <div class="tile tile--4" data-reveal style="--d:0.08s"><div class="big">1–3</div><h3>недели — поставка</h3><p>Поставка оборудования.</p></div>
-      <div class="tile tile--4" data-reveal style="--d:0.16s"><div class="big">24/7</div><h3>поддержка</h3><p>Единый колл-центр и поддержка франчайзи.</p></div>
+      <div class="tile tile--yellow tile--7" data-reveal style="--d:0s"><div class="big">от 3 до 20 млн ₽</div><h3>инвестиции</h3><p>В зависимости от города.</p></div>
+      <div class="tile tile--navy tile--5" data-reveal style="--d:0.08s"><div class="big" style="color:var(--yellow)">20%</div><h3>роялти от выручки</h3><p>Без паушального взноса.</p></div>
+      <div class="tile tile--4" data-reveal style="--d:0s"><div class="big">12+</div><h3>месяцев — окупаемость</h3><p>От 12 месяцев.</p></div>
+      <div class="tile tile--4" data-reveal style="--d:0.08s"><div class="big">1–3</div><h3>недели — поставка</h3><p>Поставка оборудования.</p></div>
+      <div class="tile tile--4" data-reveal style="--d:0.16s"><div class="big">24/7</div><h3>поддержка</h3><p>Единый колл-центр и поддержка франчайзи.</p></div>
     </div>
-    <p style="margin-top:20px;font-size:14px"><span class="todo">[УТОЧНИТЬ: юридическая оговорка о сроках окупаемости и доходности]</span></p>
+    <p style="margin-top:20px;font-size:14px"><span class="todo">[УТОЧНИТЬ: юридическая оговорка о сроках окупаемости и доходности]</span></p>
   </div>
 </section>
 
 <section class="sheet sheet--white">
   <div class="wrap">
-    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Что входит</span><h2>Всё, чтобы запуститься и расти</h2></div>
+    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Что входит</span><h2>Всё, чтобы запуститься и расти</h2></div>
     <div class="grid grid--3">
-      <div class="card" style="background:var(--bg)" data-reveal style="--d:0s"><div class="ico">1</div><h3>Оборудование</h3><p>Поставка терминалов за 1–3 недели.</p></div>
-      <div class="card" style="background:var(--bg)" data-reveal style="--d:0.08s"><div class="ico">2</div><h3>Обучение</h3><p>Научим запускать и вести сеть в вашем городе.</p></div>
-      <div class="card" style="background:var(--bg)" data-reveal style="--d:0.16s"><div class="ico">3</div><h3>Поддержка 24/7</h3><p>Единый колл-центр для пользователей и поддержка франчайзи.</p></div>
-      <div class="card" style="background:var(--bg)" data-reveal style="--d:0s"><div class="ico">4</div><h3>Личный кабинет с аналитикой</h3><p>Следите за терминалами и выручкой сети.</p></div>
-      <div class="card" style="background:var(--bg)" data-reveal style="--d:0.08s"><div class="ico">5</div><h3>Собственное ПО</h3><p>Мобильное приложение и платформа управления сетью — разработки EnerGO.</p></div>
-      <div class="card" style="background:var(--bg)" data-reveal style="--d:0.16s"><div class="ico">6</div><h3>Обратный выкуп</h3><p>Обратный выкуп оборудования по договору.</p></div>
+      <div class="card" style="background:var(--bg)" data-reveal style="--d:0s"><div class="ico">1</div><h3>Оборудование</h3><p>Поставка терминалов за 1–3 недели.</p></div>
+      <div class="card" style="background:var(--bg)" data-reveal style="--d:0.08s"><div class="ico">2</div><h3>Обучение</h3><p>Научим запускать и вести сеть в вашем городе.</p></div>
+      <div class="card" style="background:var(--bg)" data-reveal style="--d:0.16s"><div class="ico">3</div><h3>Поддержка 24/7</h3><p>Единый колл-центр для пользователей и поддержка франчайзи.</p></div>
+      <div class="card" style="background:var(--bg)" data-reveal style="--d:0s"><div class="ico">4</div><h3>Личный кабинет с аналитикой</h3><p>Следите за терминалами и выручкой сети.</p></div>
+      <div class="card" style="background:var(--bg)" data-reveal style="--d:0.08s"><div class="ico">5</div><h3>Собственное ПО</h3><p>Мобильное приложение и платформа управления сетью — разработки EnerGO.</p></div>
+      <div class="card" style="background:var(--bg)" data-reveal style="--d:0.16s"><div class="ico">6</div><h3>Обратный выкуп</h3><p>Обратный выкуп оборудования по договору.</p></div>
     </div>
   </div>
 </section>
@@ -74,10 +87,10 @@
   <div class="wrap">
     <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Оборудование</span><h2>Четыре типа терминалов</h2></div>
     <div class="grid grid--4">
-<div class="card term" data-reveal style="--d:0s"><div class="term__art"><svg viewBox="0 0 340 430" style="height:150px;width:auto" aria-hidden="true"><rect x="36" y="16" width="248" height="384" rx="32" fill="#fff" stroke="#DDE3F0" stroke-width="4"/><path d="M36 48a32 32 0 0 1 32-32h184a32 32 0 0 1 32 32v52H36z" fill="#FCDE31"/><g><rect x="60" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="290" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="290" width="92" height="50" rx="25" fill="#FCDE31"/></g></svg></div><b class="size">6 пауэрбанков</b><h3>S06</h3><p>Самый компактный.</p></div>
-<div class="card term" data-reveal style="--d:0.08s"><div class="term__art"><svg viewBox="0 0 340 430" style="height:150px;width:auto" aria-hidden="true"><rect x="36" y="16" width="248" height="384" rx="32" fill="#fff" stroke="#DDE3F0" stroke-width="4"/><path d="M36 48a32 32 0 0 1 32-32h184a32 32 0 0 1 32 32v52H36z" fill="#FCDE31"/><g><rect x="60" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="290" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="290" width="92" height="50" rx="25" fill="#FCDE31"/></g></svg></div><b class="size">8 пауэрбанков</b><h3>S08</h3><p>25×19×22 см, встаёт у кассы.</p></div>
-<div class="card term" data-reveal style="--d:0.16s"><div class="term__art"><svg viewBox="0 0 340 430" style="height:150px;width:auto" aria-hidden="true"><rect x="36" y="16" width="248" height="384" rx="32" fill="#fff" stroke="#DDE3F0" stroke-width="4"/><path d="M36 48a32 32 0 0 1 32-32h184a32 32 0 0 1 32 32v52H36z" fill="#FCDE31"/><g><rect x="60" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="290" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="290" width="92" height="50" rx="25" fill="#FCDE31"/></g></svg></div><b class="size">24 пауэрбанка</b><h3>S24</h3><p>Для мест с большим потоком.</p></div>
-<div class="card term" data-reveal style="--d:0.24s"><div class="term__art"><svg viewBox="0 0 340 430" style="height:150px;width:auto" aria-hidden="true"><rect x="36" y="16" width="248" height="384" rx="32" fill="#fff" stroke="#DDE3F0" stroke-width="4"/><path d="M36 48a32 32 0 0 1 32-32h184a32 32 0 0 1 32 32v52H36z" fill="#FCDE31"/><g><rect x="60" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="130" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="210" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="60" y="290" width="92" height="50" rx="25" fill="#FCDE31"/><rect x="168" y="290" width="92" height="50" rx="25" fill="#FCDE31"/></g></svg></div><b class="size">48 пауэрбанков</b><h3>CS48</h3><p>Самый вместительный.</p></div></div>
+<div class="card term" data-reveal style="--d:0s"><div class="term__art"><div class="slots" style="--c:2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">6 пауэрбанков</b><h3>S06</h3><p>Самый компактный.</p></div>
+<div class="card term" data-reveal style="--d:0.08s"><div class="term__art"><div class="slots" style="--c:2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">8 пауэрбанков</b><h3>S08</h3><p>25×19×22 см, встаёт у кассы.</p></div>
+<div class="card term" data-reveal style="--d:0.16s"><div class="term__art"><div class="slots" style="--c:4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">24 пауэрбанка</b><h3>S24</h3><p>Для мест с большим потоком.</p></div>
+<div class="card term" data-reveal style="--d:0.24s"><div class="term__art"><div class="slots" style="--c:6" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">48 пауэрбанков</b><h3>CS48</h3><p>Самый вместительный.</p></div></div>
   </div>
 </section>
 
@@ -87,16 +100,16 @@
       <span class="eyebrow">Кому подходит</span>
       <h2 style="font-size:clamp(30px,3.6vw,46px)">Кому подходит франшиза</h2>
       <p class="lead"><span class="todo">[УТОЧНИТЬ: портрет франчайзи: опыт, бюджет, минимальный размер сети]</span></p>
-      <h2 style="font-size:clamp(30px,3.6vw,46px);margin-top:48px">Как начать</h2>
+      <h2 style="font-size:clamp(30px,3.6vw,46px);margin-top:48px">Как начать</h2>
       <p class="lead"><span class="todo">[УТОЧНИТЬ: этапы: заявка, встреча, договор, поставка, запуск]</span></p>
     </div>
     <div data-reveal style="--d:0.1s">
-      <span class="eyebrow">О компании</span>
+      <span class="eyebrow">О компании</span>
       <ul class="timeline" style="padding-left:0;color:inherit">
-        <li><b>2019</b><span>Первый терминал в Москве.</span></li>
-        <li><b>2020</b><span>Пилот с Московским метрополитеном, около 150 терминалов.</span></li>
-        <li><b>2021</b><span>Контракт на установку терминалов на каждой станции метро.</span></li>
-        <li><b>2022</b><span>Проект с МФЦ.</span></li>
+        <li><b>2019</b><span>Первый терминал в Москве.</span></li>
+        <li><b>2020</b><span>Пилот с Московским метрополитеном, около 150 терминалов.</span></li>
+        <li><b>2021</b><span>Контракт на установку терминалов на каждой станции метро.</span></li>
+        <li><b>2022</b><span>Проект с МФЦ.</span></li>
       </ul>
     </div>
   </div>
@@ -106,23 +119,23 @@
   <div class="wrap split">
     <div data-reveal style="--d:0s">
       <span class="eyebrow">Заявка</span>
-      <h2>Запишитесь на встречу</h2>
-      <p class="lead">Расскажем про проект, ответим на вопросы и посчитаем запуск в вашем городе. <span class="todo">[УТОЧНИТЬ: что именно получает франчайзи на встрече (бизнес-план, презентация)]</span></p>
+      <h2>Запишитесь на встречу</h2>
+      <p class="lead">Расскажем про проект, ответим на вопросы и посчитаем запуск в вашем городе. <span class="todo">[УТОЧНИТЬ: что именно получает франчайзи на встрече (бизнес-план, презентация)]</span></p>
       <ul>
         <li><a href="tel:+74951201876">8 (495) 120-18-76</a>, будни 9:00–18:00</li>
         <li><a href="mailto:office@energo.app">office@energo.app</a></li>
-        <li><a href="https://t.me/energo_business" rel="noopener">Telegram-канал для бизнеса</a></li>
+        <li><a href="https://t.me/energo_business" rel="noopener">Telegram-канал для бизнеса</a></li>
       </ul>
     </div>
     
 <div class="form-card" id="form" data-reveal style="--d:0.1s">
-  <h3>Заявка на франшизу</h3>
+  <h3>Заявка на франшизу</h3>
   <form class="form" data-form="franchise" novalidate>
-    <label class="f">Ваше имя *<input type="text" name="name" required autocomplete="name"></label><div class="form__row"><label class="f">Телефон *<input type="tel" name="phone" required autocomplete="tel" placeholder="+7"></label><label class="f">Email<input type="email" name="email"  autocomplete="email"></label></div><label class="f">Город, в котором хотите открыть сеть *<input type="text" name="city" required ></label><label class="f">Комментарий<textarea name="comment"></textarea></label>
-    <div class="hp" aria-hidden="true"><label>Не заполняйте <input type="text" name="hp" tabindex="-1" autocomplete="off"></label></div>
+    <label class="f">Ваше имя *<input type="text" name="name" required autocomplete="name"></label><div class="form__row"><label class="f">Телефон *<input type="tel" name="phone" required autocomplete="tel" placeholder="+7"></label><label class="f">Email<input type="email" name="email"  autocomplete="email"></label></div><label class="f">Город, в котором хотите открыть сеть *<input type="text" name="city" required ></label><label class="f">Комментарий<textarea name="comment"></textarea></label>
+    <div class="hp" aria-hidden="true"><label>Не заполняйте <input type="text" name="hp" tabindex="-1" autocomplete="off"></label></div>
     
 <label class="consent"><input type="checkbox" name="consent" required>
-  <span>Я даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank">Политикой обработки персональных данных</a>.</span></label>
+  <span>Я даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank">Политикой обработки персональных данных</a>.</span></label>
     <button class="btn btn--yellow" type="submit" style="color:var(--ink)">Отправить заявку</button>
     <div class="form__msg" role="status" aria-live="polite"></div>
   </form>
@@ -137,11 +150,26 @@
         <div>
           <a class="logo" href="index.html" aria-label="EnerGO"><img src="assets/img/logo.svg" alt="EnerGO" width="187" height="39"></a>
           <p class="footer__tagline">Сервис зарядки гаджетов. Заряжай на ходу!</p>
+          <div class="footer__stores">
+            <a href="https://apps.apple.com/ru/app/id1507114521" rel="noopener">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.energo.rnapp" rel="noopener">Google Play</a>
+            <a href="https://www.rustore.ru/catalog/app/com.energo.rnapp" rel="noopener">RuStore</a>
+          </div>
+        </div>
+        <div>
+          <h4>Разделы</h4>
+          <ul>
+            <li><a href="business.html">Для бизнеса</a></li>
+            <li><a href="franchise.html">Франшиза</a></li>
+            <li><a href="events.html">Для мероприятий</a></li>
+            <li><a href="partners.html">Партнёры</a></li>
+            <li><a href="faq.html">Частые вопросы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
         </div>
         <div>
           <h4>Связаться</h4>
           <ul>
-            <li><a href="faq.html">Частые вопросы</a></li>
             <li>Поддержка: <a href="tel:+78006004264">8 (800) 600-42-64</a></li>
             <li><a href="mailto:support@energo.app">support@energo.app</a></li>
             <li><a href="https://t.me/HelpEnerGO_bot" rel="noopener">Telegram-бот поддержки</a></li>
