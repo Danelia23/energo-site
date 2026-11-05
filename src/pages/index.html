@@ -27,9 +27,9 @@
       <div class="btn-row"><a class="btn btn--yellow" href="https://onelink.to/35pdxt"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> Скачать приложение</a><a class="btn btn--grey" href="business.html#form">Стать партнёром</a></div>
       
       <ul class="hero__facts" aria-label="EnerGO в цифрах">
-        <li><b>15 000+</b><span>станций</span></li>
-        <li><b>180+</b><span>городов</span></li>
-        <li><b>3 млн+</b><span>пользователей</span></li>
+        <li><b data-count="15000" data-suffix="+">15 000+</b><span>станций</span></li>
+        <li><b data-count="180" data-suffix="+">180+</b><span>городов</span></li>
+        <li><b data-count="3" data-suffix=" млн+">3 млн+</b><span>пользователей</span></li>
       </ul>
     </div>
   </div>
@@ -139,7 +139,7 @@
       </article>
     </div>
     <div class="facts">
-      <div class="fact" data-reveal style="--d:0s"><b>3 млн+</b><span>пользователей</span></div>
+      <div class="fact" data-reveal style="--d:0s"><b data-count="3" data-suffix=" млн+">3 млн+</b><span>пользователей</span></div>
       <div class="fact" data-reveal style="--d:0.06s"><b>5000 мА·ч</b><span>заряжает телефон до 100% примерно за 2 часа</span></div>
       <div class="fact" data-reveal style="--d:0.12s"><b>~10 секунд</b><span>до выдачи после списания денег</span></div>
       <div class="fact" data-reveal style="--d:0.18s"><b>до 4</b><span>пауэрбанков на один аккаунт</span></div>
@@ -172,13 +172,13 @@
 <section class="sheet sheet--white" id="where">
   <div class="wrap">
     <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Где найти</span><h2>Тут есть зарядка!</h2><p>Терминалы EnerGO стоят там, где обычно садится телефон.</p></div>
-    <ul class="chips" data-reveal style="--d:0s">
-      <li>Станции метро и транспортные узлы</li><li>Фитнес-клубы</li><li>Кафе, бары и рестораны</li><li>Торговые центры</li><li>Рынки</li><li>МФЦ</li>
-    </ul>
+    <div class="marquee" aria-label="Где стоят терминалы EnerGO" data-reveal style="--d:0s">
+      <div class="marquee__track"><ul><li>Станции метро и транспортные узлы</li><li>Фитнес-клубы</li><li>Кафе, бары и рестораны</li><li>Торговые центры</li><li>Рынки</li><li>МФЦ</li></ul><ul aria-hidden="true"><li>Станции метро и транспортные узлы</li><li>Фитнес-клубы</li><li>Кафе, бары и рестораны</li><li>Торговые центры</li><li>Рынки</li><li>МФЦ</li></ul></div>
+    </div>
     <div class="map-box" id="map-box" data-reveal style="--d:0.1s">
       <div class="coverage">
         <div class="coverage__text">
-          <span class="coverage__big">15 000+</span>
+          <span class="coverage__big" data-count="15000" data-suffix="+">15 000+</span>
           <span class="coverage__cap">станций в 180+ городах</span>
           <p>Ближайший терминал выбирай на карте в приложении EnerGO.</p>
           <a class="btn btn--yellow" href="https://onelink.to/35pdxt">Открыть в приложении</a>

@@ -43,15 +43,19 @@
 <section class="hero hero--page">
   <!-- Фон: положите фото в assets/img/hero-franchise.jpg. Для видео вместо фото: <video class="hero__video" autoplay muted loop playsinline src="assets/img/hero.mp4"></video> -->
   <div class="hero__bg" style="--hero-img:url('../assets/img/hero-franchise.jpg')" aria-hidden="true"></div>
-    <div class="hero__art hero__art--pb" aria-hidden="true"><img src="assets/img/pb-front.webp" alt="" width="684" height="1500"></div>
-  <div class="wrap hero__in">
+  <div class="wrap hero__in hero__in--stack">
     <div class="hero__text">
       
       <h1>Стройте сеть EnerGO<br>в своём городе</h1>
-      <p class="hero__lead">Покупайте терминалы и развивайте сеть пауэрбанков вместе с сервисом, у которого 15 000+ станций в 180+ городах.</p>
+      <p class="hero__lead">Покупайте терминалы и развивайте сеть пауэрбанков вместе с сервисом, у которого 15 000+ станций в 180+ городах.</p>
       <div class="btn-row"><a class="btn btn--yellow" href="#form">Записаться на встречу</a><a class="btn btn--grey" href="#" data-todo>Скачать презентацию</a></div>
-      <p class="hero__note"><span class="todo">[УТОЧНИТЬ: PDF-презентация франшизы; обещания по доходности, например «от 150 000 ₽ в месяц» с макета Figma, публиковать только после подтверждения]</span></p>
+      <p class="hero__note"><span class="todo">[УТОЧНИТЬ: PDF-презентация франшизы; обещания по доходности, например «от 150 000 ₽ в месяц» с макета Figma, публиковать только после подтверждения]</span></p>
     </div>
+    <ul class="hero__stack">
+      <li class="fcard fcard--y" style="--t:0s"><span class="fcard__k">Инвестиции</span><b>3–20 млн ₽</b><span class="fcard__t">В зависимости от города</span></li>
+      <li class="fcard fcard--k" style="--t:-2s"><span class="fcard__k">Роялти</span><b data-count="20" data-suffix="%">20%</b><span class="fcard__t">от выручки, без паушального взноса</span></li>
+      <li class="fcard fcard--g" style="--t:-4s"><span class="fcard__k">Поставка</span><b>1–3 нед.</b><span class="fcard__t">оборудования после заказа</span></li>
+    </ul>
   </div>
 </section>
 
@@ -148,7 +152,6 @@
     <div class="wrap">
       <div class="footer__grid">
         <div>
-          <a class="logo" href="index.html" aria-label="EnerGO"><img src="assets/img/logo.svg" alt="EnerGO" width="187" height="39"></a>
           <p class="footer__tagline">Сервис зарядки гаджетов. Заряжай на ходу!</p>
           <div class="footer__stores">
             <a href="https://apps.apple.com/ru/app/id1507114521" rel="noopener">App Store</a>
@@ -189,6 +192,7 @@
           </ul>
         </div>
       </div>
+      <a class="footer__mark" href="index.html" aria-label="EnerGO — на главную"><img src="assets/img/logo.svg" alt="" width="187" height="39"></a>
       <div class="footer__bottom">
         <span>Программа «EnerGO» включена в реестр российского ПО (запись № 32488 от 05.03.2026). Свидетельство о регистрации программы для ЭВМ № 2022665484 от 17.08.2022.</span>
         <span>© 2026 ООО «ЭНЕРГО ТЕХНОЛОДЖИС»</span>

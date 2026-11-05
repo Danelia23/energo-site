@@ -43,8 +43,7 @@
 <section class="hero hero--page">
   <!-- Фон: положите фото в assets/img/hero-events.jpg. Для видео вместо фото: <video class="hero__video" autoplay muted loop playsinline src="assets/img/hero.mp4"></video> -->
   <div class="hero__bg" style="--hero-img:url('../assets/img/hero-events.jpg')" aria-hidden="true"></div>
-    <div class="hero__art hero__art--pb" aria-hidden="true"><img src="assets/img/pb-front.webp" alt="" width="684" height="1500"></div>
-  <div class="wrap hero__in">
+  <div class="wrap hero__in hero__in--stack">
     <div class="hero__text">
       
       <h1>EnerGO<br>на вашем мероприятии</h1>
@@ -52,6 +51,11 @@
       <div class="btn-row"><a class="btn btn--yellow" href="#form">Обсудить размещение</a><a class="btn btn--grey" href="tel:+74951201876">8 (495) 120-18-76</a></div>
       <p class="hero__note">Коммерческий отдел, будни 9:00–18:00</p>
     </div>
+    <ul class="hero__stack">
+      <li class="fcard fcard--y" style="--t:0s"><span class="fcard__k">Сеть EnerGO</span><b data-count="15000" data-suffix="+">15 000+</b><span class="fcard__t">станций в 180+ городах</span></li>
+      <li class="fcard fcard--k" style="--t:-2s"><span class="fcard__k">Аудитория</span><b data-count="3" data-suffix=" млн+">3 млн+</b><span class="fcard__t">пользователей сервиса</span></li>
+      <li class="fcard fcard--todo" style="--t:-4s"><span class="fcard__k">Для организаторов</span><span class="fcard__t">[УТОЧНИТЬ: оффер, форматы и условия участия]</span></li>
+    </ul>
   </div>
 </section>
 
@@ -99,7 +103,6 @@
     <div class="wrap">
       <div class="footer__grid">
         <div>
-          <a class="logo" href="index.html" aria-label="EnerGO"><img src="assets/img/logo.svg" alt="EnerGO" width="187" height="39"></a>
           <p class="footer__tagline">Сервис зарядки гаджетов. Заряжай на ходу!</p>
           <div class="footer__stores">
             <a href="https://apps.apple.com/ru/app/id1507114521" rel="noopener">App Store</a>
@@ -140,6 +143,7 @@
           </ul>
         </div>
       </div>
+      <a class="footer__mark" href="index.html" aria-label="EnerGO — на главную"><img src="assets/img/logo.svg" alt="" width="187" height="39"></a>
       <div class="footer__bottom">
         <span>Программа «EnerGO» включена в реестр российского ПО (запись № 32488 от 05.03.2026). Свидетельство о регистрации программы для ЭВМ № 2022665484 от 17.08.2022.</span>
         <span>© 2026 ООО «ЭНЕРГО ТЕХНОЛОДЖИС»</span>

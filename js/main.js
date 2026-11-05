@@ -245,6 +245,26 @@
       if (hit) map.flyTo([hit.lat, hit.lng], 16);
     });
   }
+  /* ---------- Счётчики: числа «набегают» при появлении ---------- */
+  (function () {
+    var els = document.querySelectorAll("[data-count]");
+    if (!els.length || !("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0"); };
+    var run = function (el) {
+      var end = +el.getAttribute("data-count"), suf = el.getAttribute("data-suffix") || "", t0 = null, dur = 1300;
+      var step = function (t) {
+        if (t0 === null) t0 = t;
+        var k = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - k, 4);
+        el.textContent = fmt(Math.round(end * e)) + suf;
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    var io = new IntersectionObserver(function (en) {
+      en.forEach(function (x) { if (x.isIntersecting) { io.unobserve(x.target); run(x.target); } });
+    }, { threshold: .4 });
+    els.forEach(function (el) { el.textContent = "0" + (el.getAttribute("data-suffix") || ""); io.observe(el); });
+  })();
   /* Ссылки-заглушки (href="#") не прокручивают страницу к началу */
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest('a[href="#"]');
