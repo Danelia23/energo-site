@@ -360,4 +360,82 @@
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
 
   /* ---------- 3D-пауэрбанк (three.js) подгружается после загрузки страницы ---------- */
+
+  /* ================= Стиль v4: заголовки по словам, магнитные кнопки, курсор, ленты ================= */
+  (function () {
+    var root = document.documentElement;
+    var calm = function () { return window.matchMedia("(prefers-reduced-motion: reduce)").matches || root.classList.contains("no-motion"); };
+    var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    // 1) Заголовки секций въезжают по словам: слова оборачиваются, пока блок ещё невидим (он появляется через data-reveal)
+    if (!calm()) {
+      document.querySelectorAll(".head h2, .ed__head h2, .head--sub h2").forEach(function (h) {
+        if (!h.closest("[data-reveal]") || h.hasAttribute("data-split")) return;
+        var i = 0;
+        (function walk(node) {
+          Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+            if (n.nodeType === 3) {
+              var frag = document.createDocumentFragment();
+              n.textContent.split(/([ \t\n\r\f]+)/).forEach(function (part) {   // неразрывный пробел не режем: «всё —», «на ходу» остаются вместе
+                if (!part) return;
+                if (/^[ \t\n\r\f]+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+                var w = document.createElement("span"), inner = document.createElement("span");
+                w.className = "w"; inner.style.setProperty("--i", i++); inner.textContent = part; w.appendChild(inner); frag.appendChild(w);
+              });
+              node.replaceChild(frag, n);
+            } else if (n.nodeType === 1 && n.tagName !== "BR") walk(n);
+          });
+        })(h);
+        h.setAttribute("data-split", "");
+      });
+    }
+
+    // 2) Магнитные кнопки: чуть тянутся за курсором
+    if (fine && !calm()) {
+      document.querySelectorAll(".btn:not([aria-disabled=true])").forEach(function (b) {
+        b.addEventListener("mousemove", function (e) {
+          var r = b.getBoundingClientRect(), dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+          b.style.setProperty("--mx", (dx * 0.18).toFixed(1) + "px"); b.style.setProperty("--my", (dy * 0.28).toFixed(1) + "px");
+        });
+        b.addEventListener("mouseleave", function () { b.style.setProperty("--mx", "0px"); b.style.setProperty("--my", "0px"); });
+      });
+    }
+
+    // 3) Курсор-кольцо: жёлтое на тёмном, чёрное на светлом и жёлтом, растёт над ссылками
+    if (fine && !calm()) {
+      var ring = document.createElement("div"); ring.className = "cursor"; ring.setAttribute("aria-hidden", "true"); document.body.appendChild(ring);
+      var x = -100, y = -100, cx = -100, cy = -100, raf = 0, last = null;
+      var isLight = function (px, py) {
+        var el = document.elementFromPoint(px, py); if (!el) return false;
+        return !el.closest(".hero, .sheet--black, .cta, .nf, .cookie, .nav, .coverage, .steps--stack .step, .wcard--cables, .tile--navy, .tconf__art, .footer__sk");
+      };
+      var tick = function () {
+        cx += (x - cx) * 0.24; cy += (y - cy) * 0.24;
+        ring.style.transform = "translate3d(" + cx.toFixed(1) + "px," + cy.toFixed(1) + "px,0)";
+        raf = (Math.abs(x - cx) > 0.2 || Math.abs(y - cy) > 0.2) ? requestAnimationFrame(tick) : 0;
+      };
+      var refreshTone = function () { var l = isLight(x, y); if (l !== last) { ring.classList.toggle("is-light", l); last = l; } };
+      var toneRaf = 0;
+      window.addEventListener("scroll", function () {        // под неподвижным курсором меняется фон — пересчитываем цвет кольца
+        if (x < 0 || toneRaf) return;
+        toneRaf = requestAnimationFrame(function () { toneRaf = 0; refreshTone(); });
+      }, { passive: true });
+      window.addEventListener("mousemove", function (e) {
+        x = e.clientX; y = e.clientY; ring.classList.add("is-on");
+        refreshTone();
+        ring.classList.toggle("is-link", !!(e.target.closest && e.target.closest("a, button, summary, [role=tab], label, input, select, textarea")));
+        if (!raf) raf = requestAnimationFrame(tick);
+      }, { passive: true });
+      document.addEventListener("mouseleave", function () { ring.classList.remove("is-on"); });
+    }
+
+    // 4) Ленты чуть сдвигаются при прокрутке (поверх их собственного движения)
+    var ribbons = document.querySelectorAll(".ribbons");
+    if (ribbons.length && !calm()) {
+      var pend = false;
+      var shift = function () { pend = false; var v = (window.scrollY * 0.35).toFixed(1); ribbons.forEach(function (r) { r.style.setProperty("--sx", v); }); };
+      window.addEventListener("scroll", function () { if (!pend) { pend = true; requestAnimationFrame(shift); } }, { passive: true });
+    }
+  })();
+
 })();
