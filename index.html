@@ -16,30 +16,44 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnerGO","legalName":"ООО «ЭНЕРГО ТЕХНОЛОДЖИС»","taxID":"5024194594","telephone":"+7-800-600-42-64","email":"support@energo.app","address":{"@type":"PostalAddress","addressCountry":"RU","addressLocality":"Москва","streetAddress":"пл. Калужская, д. 1, к. 1, помещ. 1П","postalCode":"119049"}}</script>
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
-<script>document.documentElement.classList.add("js")</script>
+<script>document.documentElement.classList.add("js");try{if(localStorage.getItem("energo_no_motion")==="1")document.documentElement.classList.add("no-motion")}catch(e){}</script>
 </head>
 <body>
 <a class="skip" href="#main">К содержимому</a>
+<div class="cookie" id="cookie" role="dialog" aria-label="Использование cookie" hidden>
+  <p>Мы используем cookie, чтобы улучшить пользовательский опыт и понимать, как работает сайт. Выберите, какие cookie вы разрешаете использовать. Подробнее — в <a href="privacy.html">Политике обработки персональных данных</a>.</p>
+  <button class="cookie__settings" data-cookie="settings" type="button">Настроить cookie</button>
+  <div class="cookie__opts" data-open="false">
+    <label><input type="checkbox" checked disabled> <span><b>Необходимые</b><br>Нужны для работы сайта, отключить нельзя.</span></label>
+    <label><input type="checkbox" name="analytics"> <span><b>Аналитика</b><br>Помогает понять, как посетители пользуются сайтом.</span></label>
+  </div>
+  <div class="cookie__row">
+    <button class="btn btn--navy" data-cookie="accept" type="button">Принять все</button>
+    <button class="btn btn--line" data-cookie="reject" type="button">Отклонить все</button>
+  </div>
+</div>
 <header class="header">
   <div class="wrap header__in">
     <a class="logo" href="index.html" aria-label="EnerGO — на главную"><img class="logo__w" src="assets/img/logo-white.svg" alt="EnerGO" width="187" height="39"></a>
+    <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
     <nav class="nav" id="nav" data-open="false" aria-label="Основное меню">
       <a href="business.html">Для бизнеса</a>
       <a href="franchise.html">Франшиза</a>
       <a href="events.html">Для мероприятий</a>
       <a href="partners.html">Партнёры</a>
       <a class="nav__mobile" href="contacts.html">Контакты</a>
+      <div class="nav__meta"><a href="tel:+78006004264">8 (800) 600-42-64</a><a href="mailto:support@energo.app">support@energo.app</a></div>
       <a class="nav__app" href="https://onelink.to/35pdxt">Скачать приложение</a>
     </nav>
     <div class="header__act">
       <a class="header__phone" href="tel:+78006004264">8 (800) 600-42-64</a>
       <a class="btn btn--yellow btn--sm header__cta" href="https://onelink.to/35pdxt">Скачать приложение</a>
     </div>
-    <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <i class="header__prog" aria-hidden="true"></i>
   </div>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 <section class="hero">
   <!-- Фон: положите фото в assets/img/hero.jpg. Для видео вместо фото: <video class="hero__video" autoplay muted loop playsinline src="assets/img/hero.mp4"></video> -->
   <div class="hero__bg" style="--hero-img:url('../assets/img/hero.jpg')" aria-hidden="true"></div>
@@ -62,7 +76,7 @@
   <div class="wrap hero__in">
     <div class="hero__text">
       
-      <h1>Пауэрбанк рядом —<br>Заряжай на ходу!</h1>
+      <h1>Пауэрбанк рядом —<br>Заряжай на ходу!</h1>
       
       <div class="btn-row"><a class="btn btn--yellow" href="https://onelink.to/35pdxt"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> Скачать приложение</a><a class="btn btn--grey" href="business.html#form">Стать партнёром</a></div>
       
@@ -203,6 +217,7 @@
       <div class="tariff__side" data-reveal style="--d:0.1s">
         <h3>Почему тариф суточный, если заряда хватает на 2 часа?</h3>
         <p>Чтобы ты спокойно вернул пауэрбанк тогда и там, где тебе удобно, — без спешки и поиска ближайшего терминала.</p>
+        <ul class="ticks"><li>Оплата только безналичная</li><li>Деньги списываются до начала аренды</li><li>До 4 пауэрбанков на один аккаунт</li></ul>
         <a class="btn btn--navy" href="https://onelink.to/35pdxt">Скачать приложение</a>
       </div>
     </div>
@@ -246,7 +261,7 @@
     <div class="head" data-reveal style="--d:0s"><span class="eyebrow">EnerGO для бизнеса</span><h2>Три способа работать с нами</h2><p>Выберите свой формат.</p></div>
     <div class="cards3">
       <a class="pcard" href="business.html" data-reveal style="--d:0s"><span class="tag">Площадкам</span><h3>Терминал в вашем заведении</h3><p>Оборудование, установка и обслуживание — за счёт EnerGO. Заведение получает долю выручки терминала.</p><span class="go">→</span></a>
-      <a class="pcard" href="franchise.html" data-reveal style="--d:0.08s"><span class="tag">Франшиза</span><h3>Своя сеть в своём городе</h3><p>Инвестиции от 3 до 20 млн ₽, роялти 20%, без паушального взноса.</p><span class="go">→</span></a>
+      <a class="pcard" href="franchise.html" data-reveal style="--d:0.08s"><span class="tag">Франшиза</span><h3>Своя сеть в своём городе</h3><p>Инвестиции от 3 до 20 млн ₽, роялти 20%, без паушального взноса.</p><span class="go">→</span></a>
       <a class="pcard" href="partners.html" data-reveal style="--d:0.16s"><span class="tag">Партнёры</span><h3>Метро, МФЦ и сети заведений</h3><p>С кем уже работает EnerGO и как стать частью сети.</p><span class="go">→</span></a>
     </div>
   </div>
@@ -258,25 +273,26 @@
       <div class="tg__logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11.5 21 4l-3.2 16-5.3-3.9-2.6 2.5.3-4.1L18 7.5 7.3 13.7 3 12.3z"/></svg></div>
       <div>
         <h2>Присоединяйтесь к нашему сообществу в Telegram</h2>
-        <a class="btn btn--navy" href="#" rel="noopener" data-todo>Присоединиться</a><br><span class="todo">[УТОЧНИТЬ: ссылка на Telegram-сообщество для пользователей]</span>
+        <a class="btn btn--navy" href="#" rel="noopener" aria-disabled="true" title="Ссылка появится позже">Присоединиться</a><br><span class="todo">[УТОЧНИТЬ: ссылка на Telegram-сообщество для пользователей]</span>
       </div>
     </div>
   </div>
 </section>
 
 <section class="sheet sheet--white" id="faq">
-  <div class="wrap">
-    <div class="head head--center" data-reveal style="--d:0s"><h2>Частые вопросы</h2></div>
-    <div class="faq" data-reveal style="--d:0.05s">
+  <div class="wrap ed">
+    <div class="ed__head" data-reveal style="--d:0s">
+      <span class="eyebrow">Вопросы</span><h2>Частые вопросы</h2>
+      <p class="ed__lead">Коротко о главном. Остальные ответы — на отдельной странице.</p>
+      <a class="btn btn--navy" href="faq.html">Все вопросы</a>
+    </div>
+    <div class="faq" data-reveal style="--d:0.08s">
       <div class="faq__panel is-active">
         <details open><summary>Как взять пауэрбанк?</summary><div class="ans">Скачай приложение EnerGO, войди по номеру телефона и привяжи способ оплаты. Найди терминал на карте, отсканируй QR-код на нём или введи номер терминала вручную. Деньги списываются до начала аренды, примерно через 10 секунд терминал выдаст пауэрбанк.</div></details>
         <details><summary>Сколько это стоит?</summary><div class="ans">Базовый тариф: 150 ₽ за первый час, затем 100 ₽ за остаток суток (итого 250 ₽ за 24 часа), далее 250 ₽ в сутки. В отдельных заведениях цена отличается: актуальный тариф всегда показан на терминале и в приложении. Оплата только безналичная.</div></details>
         <details><summary>Как вернуть пауэрбанк?</summary><div class="ans">В любой терминал сети: вставь пауэрбанк в свободную ячейку.</div></details>
         <details><summary>Какие телефоны можно зарядить?</summary><div class="ans">В пауэрбанк встроены три кабеля: Type-C, Lightning и Micro-USB. <span class="todo">[УТОЧНИТЬ: уточнить формулировку про совместимость с устройствами]</span></div></details>
       </div>
-    </div>
-    <div class="faq__more" data-reveal style="--d:0s">
-      <a class="btn btn--navy" href="faq.html">Все вопросы</a>
     </div>
   </div>
 </section>
@@ -303,14 +319,10 @@
       <div class="footer__grid">
         <div>
           <p class="footer__tagline">Сервис зарядки гаджетов. Заряжай на ходу!</p>
-          <div class="footer__stores">
-            <a href="https://apps.apple.com/ru/app/id1507114521" rel="noopener">App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.energo.rnapp" rel="noopener">Google Play</a>
-            <a href="https://www.rustore.ru/catalog/app/com.energo.rnapp" rel="noopener">RuStore</a>
-          </div>
+          <p class="footer__apps">Приложение: <a href="https://apps.apple.com/ru/app/id1507114521" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.energo.rnapp" rel="noopener">Google Play</a>, <a href="https://www.rustore.ru/catalog/app/com.energo.rnapp" rel="noopener">RuStore</a></p>
         </div>
         <div>
-          <h4>Разделы</h4>
+          <p class="footer__h">Разделы</p>
           <ul>
             <li><a href="business.html">Для бизнеса</a></li>
             <li><a href="franchise.html">Франшиза</a></li>
@@ -321,17 +333,17 @@
           </ul>
         </div>
         <div>
-          <h4>Связаться</h4>
+          <p class="footer__h">Связаться</p>
           <ul>
-            <li>Поддержка: <a href="tel:+78006004264">8 (800) 600-42-64</a></li>
+            <li><span class="footer__lbl">Поддержка</span><a href="tel:+78006004264">8 (800) 600-42-64</a></li>
             <li><a href="mailto:support@energo.app">support@energo.app</a></li>
             <li><a href="https://t.me/HelpEnerGO_bot" rel="noopener">Telegram-бот поддержки</a></li>
-            <li>Коммерческий отдел: <a href="tel:+74951201876">8 (495) 120-18-76</a></li>
+            <li><span class="footer__lbl">Коммерческий отдел</span><a href="tel:+74951201876">8 (495) 120-18-76</a></li>
             <li><a href="mailto:office@energo.app">office@energo.app</a></li>
           </ul>
         </div>
         <div class="footer__req">
-          <h4>Реквизиты</h4>
+          <p class="footer__h">Реквизиты</p>
           ООО «ЭНЕРГО ТЕХНОЛОДЖИС»<br>
           ИНН 5024194594 · ОГРН 1195081019803<br>
           119049, г. Москва, пл. Калужская, д. 1, к. 1, помещ. 1П<br>
@@ -342,28 +354,17 @@
           </ul>
         </div>
       </div>
-      <a class="footer__mark" href="index.html" aria-label="EnerGO — на главную"><img src="assets/img/logo.svg" alt="" width="187" height="39"></a>
+      <a class="footer__mark" href="index.html" aria-label="EnerGO — на главную"><img src="assets/img/logo-smooth.svg" alt="" width="187" height="39"></a>
       <div class="footer__bottom">
         <span>Программа «EnerGO» включена в реестр российского ПО (запись № 32488 от 05.03.2026). Свидетельство о регистрации программы для ЭВМ № 2022665484 от 17.08.2022.</span>
         <span>© 2026 ООО «ЭНЕРГО ТЕХНОЛОДЖИС»</span>
+        <button class="footer__motion" type="button" data-motion aria-pressed="false">Остановить анимацию</button>
       </div>
     </div>
   </div>
   <div class="footer__sk">Участник «Сколково»</div>
 </footer>
 
-<div class="cookie" id="cookie" role="dialog" aria-label="Использование cookie" hidden>
-  <p>Мы используем cookie, чтобы улучшить пользовательский опыт и понимать, как работает сайт. Выберите, какие cookie вы разрешаете использовать. Подробнее — в <a href="privacy.html">Политике обработки персональных данных</a>.</p>
-  <button class="cookie__settings" data-cookie="settings" type="button">Настроить cookie</button>
-  <div class="cookie__opts" data-open="false">
-    <label><input type="checkbox" checked disabled> <span><b>Необходимые</b><br>Нужны для работы сайта, отключить нельзя.</span></label>
-    <label><input type="checkbox" name="analytics"> <span><b>Аналитика</b><br>Помогает понять, как посетители пользуются сайтом.</span></label>
-  </div>
-  <div class="cookie__row">
-    <button class="btn btn--navy" data-cookie="accept" type="button">Принять все</button>
-    <button class="btn btn--line" data-cookie="reject" type="button">Отклонить все</button>
-  </div>
-</div>
 <script src="js/config.js"></script>
 <script src="js/main.js"></script>
 </body>

@@ -1,19 +1,33 @@
 <a class="skip" href="#main">К содержимому</a>
+<div class="cookie" id="cookie" role="dialog" aria-label="Использование cookie" hidden>
+  <p>Мы используем cookie, чтобы улучшить пользовательский опыт и понимать, как работает сайт. Выберите, какие cookie вы разрешаете использовать. Подробнее — в <a href="privacy.html">Политике обработки персональных данных</a>.</p>
+  <button class="cookie__settings" data-cookie="settings" type="button">Настроить cookie</button>
+  <div class="cookie__opts" data-open="false">
+    <label><input type="checkbox" checked disabled> <span><b>Необходимые</b><br>Нужны для работы сайта, отключить нельзя.</span></label>
+    <label><input type="checkbox" name="analytics"> <span><b>Аналитика</b><br>Помогает понять, как посетители пользуются сайтом.</span></label>
+  </div>
+  <div class="cookie__row">
+    <button class="btn btn--navy" data-cookie="accept" type="button">Принять все</button>
+    <button class="btn btn--line" data-cookie="reject" type="button">Отклонить все</button>
+  </div>
+</div>
 <header class="header">
   <div class="wrap header__in">
     <a class="logo" href="index.html" aria-label="EnerGO — на главную"><img class="logo__w" src="assets/img/logo-white.svg" alt="EnerGO" width="187" height="39"></a>
+    <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
     <nav class="nav" id="nav" data-open="false" aria-label="Основное меню">
       <a href="business.html">Для бизнеса</a>
       <a href="franchise.html">Франшиза</a>
       <a href="events.html">Для мероприятий</a>
       <a href="partners.html">Партнёры</a>
       <a class="nav__mobile" href="contacts.html">Контакты</a>
+      <div class="nav__meta"><a href="tel:+78006004264">8 (800) 600-42-64</a><a href="mailto:support@energo.app">support@energo.app</a></div>
       <a class="nav__app" href="https://onelink.to/35pdxt">Скачать приложение</a>
     </nav>
     <div class="header__act">
       <a class="header__phone" href="tel:+78006004264">8 (800) 600-42-64</a>
       <a class="btn btn--yellow btn--sm header__cta" href="https://onelink.to/35pdxt">Скачать приложение</a>
     </div>
-    <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <i class="header__prog" aria-hidden="true"></i>
   </div>
 </header>

@@ -16,30 +16,44 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnerGO","legalName":"ООО «ЭНЕРГО ТЕХНОЛОДЖИС»","taxID":"5024194594","telephone":"+7-800-600-42-64","email":"support@energo.app","address":{"@type":"PostalAddress","addressCountry":"RU","addressLocality":"Москва","streetAddress":"пл. Калужская, д. 1, к. 1, помещ. 1П","postalCode":"119049"}}</script>
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
-<script>document.documentElement.classList.add("js")</script>
+<script>document.documentElement.classList.add("js");try{if(localStorage.getItem("energo_no_motion")==="1")document.documentElement.classList.add("no-motion")}catch(e){}</script>
 </head>
 <body>
 <a class="skip" href="#main">К содержимому</a>
+<div class="cookie" id="cookie" role="dialog" aria-label="Использование cookie" hidden>
+  <p>Мы используем cookie, чтобы улучшить пользовательский опыт и понимать, как работает сайт. Выберите, какие cookie вы разрешаете использовать. Подробнее — в <a href="privacy.html">Политике обработки персональных данных</a>.</p>
+  <button class="cookie__settings" data-cookie="settings" type="button">Настроить cookie</button>
+  <div class="cookie__opts" data-open="false">
+    <label><input type="checkbox" checked disabled> <span><b>Необходимые</b><br>Нужны для работы сайта, отключить нельзя.</span></label>
+    <label><input type="checkbox" name="analytics"> <span><b>Аналитика</b><br>Помогает понять, как посетители пользуются сайтом.</span></label>
+  </div>
+  <div class="cookie__row">
+    <button class="btn btn--navy" data-cookie="accept" type="button">Принять все</button>
+    <button class="btn btn--line" data-cookie="reject" type="button">Отклонить все</button>
+  </div>
+</div>
 <header class="header">
   <div class="wrap header__in">
     <a class="logo" href="index.html" aria-label="EnerGO — на главную"><img class="logo__w" src="assets/img/logo-white.svg" alt="EnerGO" width="187" height="39"></a>
+    <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
     <nav class="nav" id="nav" data-open="false" aria-label="Основное меню">
       <a href="business.html">Для бизнеса</a>
       <a href="franchise.html" aria-current="page">Франшиза</a>
       <a href="events.html">Для мероприятий</a>
       <a href="partners.html">Партнёры</a>
       <a class="nav__mobile" href="contacts.html">Контакты</a>
+      <div class="nav__meta"><a href="tel:+78006004264">8 (800) 600-42-64</a><a href="mailto:support@energo.app">support@energo.app</a></div>
       <a class="nav__app" href="https://onelink.to/35pdxt">Скачать приложение</a>
     </nav>
     <div class="header__act">
       <a class="header__phone" href="tel:+78006004264">8 (800) 600-42-64</a>
       <a class="btn btn--yellow btn--sm header__cta" href="https://onelink.to/35pdxt">Скачать приложение</a>
     </div>
-    <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <i class="header__prog" aria-hidden="true"></i>
   </div>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 <section class="hero hero--page">
   <!-- Фон: положите фото в assets/img/hero-franchise.jpg. Для видео вместо фото: <video class="hero__video" autoplay muted loop playsinline src="assets/img/hero.mp4"></video> -->
   <div class="hero__bg" style="--hero-img:url('../assets/img/hero-franchise.jpg')" aria-hidden="true"></div>
@@ -48,11 +62,11 @@
       
       <h1>Стройте сеть EnerGO<br>в своём городе</h1>
       <p class="hero__lead">Покупайте терминалы и развивайте сеть пауэрбанков вместе с сервисом, у которого 15 000+ станций в 180+ городах.</p>
-      <div class="btn-row"><a class="btn btn--yellow" href="#form">Записаться на встречу</a><a class="btn btn--grey" href="#" data-todo>Скачать презентацию</a></div>
-      <p class="hero__note"><span class="todo">[УТОЧНИТЬ: PDF-презентация франшизы; обещания по доходности, например «от 150 000 ₽ в месяц» с макета Figma, публиковать только после подтверждения]</span></p>
+      <div class="btn-row"><a class="btn btn--yellow" href="#form">Записаться на встречу</a><a class="btn btn--grey" href="#" aria-disabled="true" title="Презентация появится позже">Скачать презентацию</a></div>
+      <p class="hero__note"><span class="todo">[УТОЧНИТЬ: PDF-презентация; доходность «от 150 000 ₽ в месяц» из макета — публиковать только после подтверждения]</span></p>
     </div>
     <ul class="hero__stack">
-      <li class="fcard fcard--y" style="--t:0s"><span class="fcard__k">Инвестиции</span><b>3–20 млн ₽</b><span class="fcard__t">В зависимости от города</span></li>
+      <li class="fcard fcard--y" style="--t:0s"><span class="fcard__k">Инвестиции</span><b>3–20 млн ₽</b><span class="fcard__t">В зависимости от города</span></li>
       <li class="fcard fcard--k" style="--t:-2s"><span class="fcard__k">Роялти</span><b data-count="20" data-suffix="%">20%</b><span class="fcard__t">от выручки, без паушального взноса</span></li>
       <li class="fcard fcard--g" style="--t:-4s"><span class="fcard__k">Поставка</span><b>1–3 нед.</b><span class="fcard__t">оборудования после заказа</span></li>
     </ul>
@@ -63,7 +77,7 @@
   <div class="wrap">
     <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Условия</span><h2>Всё прозрачно: цифры и сроки</h2></div>
     <div class="bento">
-      <div class="tile tile--yellow tile--7" data-reveal style="--d:0s"><div class="big">от 3 до 20 млн ₽</div><h3>инвестиции</h3><p>В зависимости от города.</p></div>
+      <div class="tile tile--yellow tile--7" data-reveal style="--d:0s"><div class="big">от 3 до 20 млн ₽</div><h3>инвестиции</h3><p>В зависимости от города.</p></div>
       <div class="tile tile--navy tile--5" data-reveal style="--d:0.08s"><div class="big" style="color:var(--yellow)">20%</div><h3>роялти от выручки</h3><p>Без паушального взноса.</p></div>
       <div class="tile tile--4" data-reveal style="--d:0s"><div class="big">12+</div><h3>месяцев — окупаемость</h3><p>От 12 месяцев.</p></div>
       <div class="tile tile--4" data-reveal style="--d:0.08s"><div class="big">1–3</div><h3>недели — поставка</h3><p>Поставка оборудования.</p></div>
@@ -74,48 +88,59 @@
 </section>
 
 <section class="sheet sheet--white">
-  <div class="wrap">
-    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Что входит</span><h2>Всё, чтобы запуститься и расти</h2></div>
-    <div class="grid grid--3">
-      <div class="card" style="background:var(--bg)" data-reveal style="--d:0s"><div class="ico">1</div><h3>Оборудование</h3><p>Поставка терминалов за 1–3 недели.</p></div>
-      <div class="card" style="background:var(--bg)" data-reveal style="--d:0.08s"><div class="ico">2</div><h3>Обучение</h3><p>Научим запускать и вести сеть в вашем городе.</p></div>
-      <div class="card" style="background:var(--bg)" data-reveal style="--d:0.16s"><div class="ico">3</div><h3>Поддержка 24/7</h3><p>Единый колл-центр для пользователей и поддержка франчайзи.</p></div>
-      <div class="card" style="background:var(--bg)" data-reveal style="--d:0s"><div class="ico">4</div><h3>Личный кабинет с аналитикой</h3><p>Следите за терминалами и выручкой сети.</p></div>
-      <div class="card" style="background:var(--bg)" data-reveal style="--d:0.08s"><div class="ico">5</div><h3>Собственное ПО</h3><p>Мобильное приложение и платформа управления сетью — разработки EnerGO.</p></div>
-      <div class="card" style="background:var(--bg)" data-reveal style="--d:0.16s"><div class="ico">6</div><h3>Обратный выкуп</h3><p>Обратный выкуп оборудования по договору.</p></div>
-    </div>
+  <div class="wrap ed">
+    <div class="ed__head" data-reveal style="--d:0s"><span class="eyebrow">Что входит</span><h2>Всё, чтобы запуститься и расти</h2></div>
+    <ol class="ed__list">
+      <li data-reveal style="--d:0.0s"><span class="ed__n" aria-hidden="true">01</span><div><h3>Оборудование</h3><p>Поставка терминалов за 1–3 недели.</p></div></li>
+      <li data-reveal style="--d:0.06s"><span class="ed__n" aria-hidden="true">02</span><div><h3>Обучение</h3><p>Научим запускать и вести сеть в вашем городе.</p></div></li>
+      <li data-reveal style="--d:0.12s"><span class="ed__n" aria-hidden="true">03</span><div><h3>Поддержка 24/7</h3><p>Единый колл-центр для пользователей и поддержка франчайзи.</p></div></li>
+      <li data-reveal style="--d:0.0s"><span class="ed__n" aria-hidden="true">04</span><div><h3>Личный кабинет с аналитикой</h3><p>Следите за терминалами и выручкой сети.</p></div></li>
+      <li data-reveal style="--d:0.06s"><span class="ed__n" aria-hidden="true">05</span><div><h3>Собственное ПО</h3><p>Мобильное приложение и платформа управления сетью — разработки EnerGO.</p></div></li>
+      <li data-reveal style="--d:0.12s"><span class="ed__n" aria-hidden="true">06</span><div><h3>Обратный выкуп</h3><p>Обратный выкуп оборудования по договору.</p></div></li>
+    </ol>
   </div>
 </section>
 
 <section class="sheet">
   <div class="wrap">
     <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Оборудование</span><h2>Четыре типа терминалов</h2></div>
-    <div class="grid grid--4">
-<div class="card term" data-reveal style="--d:0s"><div class="term__art"><div class="slots" style="--c:2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">6 пауэрбанков</b><h3>S06</h3><p>Самый компактный.</p></div>
-<div class="card term" data-reveal style="--d:0.08s"><div class="term__art"><div class="slots" style="--c:2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">8 пауэрбанков</b><h3>S08</h3><p>25×19×22 см, встаёт у кассы.</p></div>
-<div class="card term" data-reveal style="--d:0.16s"><div class="term__art"><div class="slots" style="--c:4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">24 пауэрбанка</b><h3>S24</h3><p>Для мест с большим потоком.</p></div>
-<div class="card term" data-reveal style="--d:0.24s"><div class="term__art"><div class="slots" style="--c:6" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">48 пауэрбанков</b><h3>CS48</h3><p>Самый вместительный.</p></div></div>
+    <div class="tconf" data-tconf>
+      <div class="tconf__tabs" role="tablist" aria-label="Модель терминала"><button class="tconf__tab" role="tab" id="tc-t-S06" aria-controls="tc-p-S06" aria-selected="true" data-tc="S06" type="button">S06</button><button class="tconf__tab" role="tab" id="tc-t-S08" aria-controls="tc-p-S08" aria-selected="false" data-tc="S08" type="button">S08</button><button class="tconf__tab" role="tab" id="tc-t-S24" aria-controls="tc-p-S24" aria-selected="false" data-tc="S24" type="button">S24</button><button class="tconf__tab" role="tab" id="tc-t-CS48" aria-controls="tc-p-CS48" aria-selected="false" data-tc="CS48" type="button">CS48</button></div>
+      <div class="tconf__panel is-active" role="tabpanel" id="tc-p-S06" aria-labelledby="tc-t-S06" data-tc-panel="S06">
+        <div class="tconf__art" aria-hidden="true"><div class="slots slots--xl" style="--c:2"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i></div></div>
+        <div class="tconf__info"><b class="tconf__cap">6</b><span class="tconf__unit">пауэрбанков</span><h3>S06</h3><p>Самый компактный.</p></div>
+      </div>
+      <div class="tconf__panel" role="tabpanel" id="tc-p-S08" aria-labelledby="tc-t-S08" data-tc-panel="S08">
+        <div class="tconf__art" aria-hidden="true"><div class="slots slots--xl" style="--c:2"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i></div></div>
+        <div class="tconf__info"><b class="tconf__cap">8</b><span class="tconf__unit">пауэрбанков</span><h3>S08</h3><p>25×19×22 см, встаёт у кассы.</p></div>
+      </div>
+      <div class="tconf__panel" role="tabpanel" id="tc-p-S24" aria-labelledby="tc-t-S24" data-tc-panel="S24">
+        <div class="tconf__art" aria-hidden="true"><div class="slots slots--xl" style="--c:4"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i></div></div>
+        <div class="tconf__info"><b class="tconf__cap">24</b><span class="tconf__unit">пауэрбанка</span><h3>S24</h3><p>Для мест с большим потоком.</p></div>
+      </div>
+      <div class="tconf__panel" role="tabpanel" id="tc-p-CS48" aria-labelledby="tc-t-CS48" data-tc-panel="CS48">
+        <div class="tconf__art" aria-hidden="true"><div class="slots slots--xl" style="--c:6"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i><i style="--k:24"></i><i style="--k:25"></i><i style="--k:26"></i><i style="--k:27"></i><i style="--k:28"></i><i style="--k:29"></i><i style="--k:30"></i><i style="--k:31"></i><i style="--k:32"></i><i style="--k:33"></i><i style="--k:34"></i><i style="--k:35"></i><i style="--k:36"></i><i style="--k:37"></i><i style="--k:38"></i><i style="--k:39"></i><i style="--k:40"></i><i style="--k:41"></i><i style="--k:42"></i><i style="--k:43"></i><i style="--k:44"></i><i style="--k:45"></i><i style="--k:46"></i><i style="--k:47"></i></div></div>
+        <div class="tconf__info"><b class="tconf__cap">48</b><span class="tconf__unit">пауэрбанков</span><h3>CS48</h3><p>Самый вместительный.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="sheet sheet--white">
-  <div class="wrap split">
-    <div data-reveal style="--d:0s">
-      <span class="eyebrow">Кому подходит</span>
-      <h2 style="font-size:clamp(30px,3.6vw,46px)">Кому подходит франшиза</h2>
-      <p class="lead"><span class="todo">[УТОЧНИТЬ: портрет франчайзи: опыт, бюджет, минимальный размер сети]</span></p>
-      <h2 style="font-size:clamp(30px,3.6vw,46px);margin-top:48px">Как начать</h2>
-      <p class="lead"><span class="todo">[УТОЧНИТЬ: этапы: заявка, встреча, договор, поставка, запуск]</span></p>
-    </div>
-    <div data-reveal style="--d:0.1s">
-      <span class="eyebrow">О компании</span>
-      <ul class="timeline" style="padding-left:0;color:inherit">
-        <li><b>2019</b><span>Первый терминал в Москве.</span></li>
-        <li><b>2020</b><span>Пилот с Московским метрополитеном, около 150 терминалов.</span></li>
-        <li><b>2021</b><span>Контракт на установку терминалов на каждой станции метро.</span></li>
-        <li><b>2022</b><span>Проект с МФЦ.</span></li>
-      </ul>
-    </div>
+  <div class="wrap">
+    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Кому подходит</span><h2>Кому подходит франшиза</h2></div>
+    <ol class="slotgrid" style="--n:1">
+      <li class="slot slot--wide" data-reveal style="--d:0s"><span class="slot__n" aria-hidden="true">01</span><span class="todo">[УТОЧНИТЬ: портрет франчайзи — опыт, бюджет, минимальный размер сети]</span></li>
+    </ol>
+    <div class="head head--sub" data-reveal style="--d:0s"><h2>Как начать</h2></div>
+    <ol class="slotgrid" style="--n:5">
+      <li class="slot" data-reveal style="--d:0.06s"><span class="slot__n" aria-hidden="true">01</span><span class="todo">[УТОЧНИТЬ: этап 1]</span></li>
+      <li class="slot" data-reveal style="--d:0.12s"><span class="slot__n" aria-hidden="true">02</span><span class="todo">[УТОЧНИТЬ: этап 2]</span></li>
+      <li class="slot" data-reveal style="--d:0.18s"><span class="slot__n" aria-hidden="true">03</span><span class="todo">[УТОЧНИТЬ: этап 3]</span></li>
+      <li class="slot" data-reveal style="--d:0.0s"><span class="slot__n" aria-hidden="true">04</span><span class="todo">[УТОЧНИТЬ: этап 4]</span></li>
+      <li class="slot" data-reveal style="--d:0.06s"><span class="slot__n" aria-hidden="true">05</span><span class="todo">[УТОЧНИТЬ: этап 5]</span></li>
+    </ol>
+    <p class="slotnote"><span class="todo">[УТОЧНИТЬ: этапы запуска франшизы — от заявки до открытия, сроки]</span></p>
   </div>
 </section>
 
@@ -126,7 +151,7 @@
       <h2>Запишитесь на встречу</h2>
       <p class="lead">Расскажем про проект, ответим на вопросы и посчитаем запуск в вашем городе. <span class="todo">[УТОЧНИТЬ: что именно получает франчайзи на встрече (бизнес-план, презентация)]</span></p>
       <ul>
-        <li><a href="tel:+74951201876">8 (495) 120-18-76</a>, будни 9:00–18:00</li>
+        <li><a href="tel:+74951201876">8 (495) 120-18-76<small>будни 9:00–18:00</small></a></li>
         <li><a href="mailto:office@energo.app">office@energo.app</a></li>
         <li><a href="https://t.me/energo_business" rel="noopener">Telegram-канал для бизнеса</a></li>
       </ul>
@@ -153,14 +178,10 @@
       <div class="footer__grid">
         <div>
           <p class="footer__tagline">Сервис зарядки гаджетов. Заряжай на ходу!</p>
-          <div class="footer__stores">
-            <a href="https://apps.apple.com/ru/app/id1507114521" rel="noopener">App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.energo.rnapp" rel="noopener">Google Play</a>
-            <a href="https://www.rustore.ru/catalog/app/com.energo.rnapp" rel="noopener">RuStore</a>
-          </div>
+          <p class="footer__apps">Приложение: <a href="https://apps.apple.com/ru/app/id1507114521" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.energo.rnapp" rel="noopener">Google Play</a>, <a href="https://www.rustore.ru/catalog/app/com.energo.rnapp" rel="noopener">RuStore</a></p>
         </div>
         <div>
-          <h4>Разделы</h4>
+          <p class="footer__h">Разделы</p>
           <ul>
             <li><a href="business.html">Для бизнеса</a></li>
             <li><a href="franchise.html">Франшиза</a></li>
@@ -171,17 +192,17 @@
           </ul>
         </div>
         <div>
-          <h4>Связаться</h4>
+          <p class="footer__h">Связаться</p>
           <ul>
-            <li>Поддержка: <a href="tel:+78006004264">8 (800) 600-42-64</a></li>
+            <li><span class="footer__lbl">Поддержка</span><a href="tel:+78006004264">8 (800) 600-42-64</a></li>
             <li><a href="mailto:support@energo.app">support@energo.app</a></li>
             <li><a href="https://t.me/HelpEnerGO_bot" rel="noopener">Telegram-бот поддержки</a></li>
-            <li>Коммерческий отдел: <a href="tel:+74951201876">8 (495) 120-18-76</a></li>
+            <li><span class="footer__lbl">Коммерческий отдел</span><a href="tel:+74951201876">8 (495) 120-18-76</a></li>
             <li><a href="mailto:office@energo.app">office@energo.app</a></li>
           </ul>
         </div>
         <div class="footer__req">
-          <h4>Реквизиты</h4>
+          <p class="footer__h">Реквизиты</p>
           ООО «ЭНЕРГО ТЕХНОЛОДЖИС»<br>
           ИНН 5024194594 · ОГРН 1195081019803<br>
           119049, г. Москва, пл. Калужская, д. 1, к. 1, помещ. 1П<br>
@@ -192,28 +213,17 @@
           </ul>
         </div>
       </div>
-      <a class="footer__mark" href="index.html" aria-label="EnerGO — на главную"><img src="assets/img/logo.svg" alt="" width="187" height="39"></a>
+      <a class="footer__mark" href="index.html" aria-label="EnerGO — на главную"><img src="assets/img/logo-smooth.svg" alt="" width="187" height="39"></a>
       <div class="footer__bottom">
         <span>Программа «EnerGO» включена в реестр российского ПО (запись № 32488 от 05.03.2026). Свидетельство о регистрации программы для ЭВМ № 2022665484 от 17.08.2022.</span>
         <span>© 2026 ООО «ЭНЕРГО ТЕХНОЛОДЖИС»</span>
+        <button class="footer__motion" type="button" data-motion aria-pressed="false">Остановить анимацию</button>
       </div>
     </div>
   </div>
   <div class="footer__sk">Участник «Сколково»</div>
 </footer>
 
-<div class="cookie" id="cookie" role="dialog" aria-label="Использование cookie" hidden>
-  <p>Мы используем cookie, чтобы улучшить пользовательский опыт и понимать, как работает сайт. Выберите, какие cookie вы разрешаете использовать. Подробнее — в <a href="privacy.html">Политике обработки персональных данных</a>.</p>
-  <button class="cookie__settings" data-cookie="settings" type="button">Настроить cookie</button>
-  <div class="cookie__opts" data-open="false">
-    <label><input type="checkbox" checked disabled> <span><b>Необходимые</b><br>Нужны для работы сайта, отключить нельзя.</span></label>
-    <label><input type="checkbox" name="analytics"> <span><b>Аналитика</b><br>Помогает понять, как посетители пользуются сайтом.</span></label>
-  </div>
-  <div class="cookie__row">
-    <button class="btn btn--navy" data-cookie="accept" type="button">Принять все</button>
-    <button class="btn btn--line" data-cookie="reject" type="button">Отклонить все</button>
-  </div>
-</div>
 <script src="js/config.js"></script>
 <script src="js/main.js"></script>
 </body>

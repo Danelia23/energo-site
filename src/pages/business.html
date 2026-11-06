@@ -20,25 +20,39 @@
 </section>
 
 <section class="sheet">
-  <div class="wrap">
-    <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Что вы получаете</span><h2>Мы делаем всё — вы получаете выручку</h2></div>
-    <div class="grid grid--2">
-      <div class="card" data-reveal style="--d:0s"><div class="ico">✓</div><h3>Оборудование, установка и обслуживание — за счёт EnerGO</h3><p>Вы не покупаете терминал и не платите за его установку и обслуживание.</p></div>
-      <div class="card" data-reveal style="--d:0.08s"><div class="ico">%</div><h3>Доля выручки терминала</h3><p>Заведение получает долю выручки терминала. <span class="todo">[УТОЧНИТЬ: условия и размер доли — публиковать только после подтверждения]</span></p></div>
-      <div class="card" data-reveal style="--d:0s"><div class="ico">0</div><h3>Персонал ничего не делает</h3><p>Сотрудникам не нужно выдавать пауэрбанки и отвечать за них: терминал работает сам.</p></div>
-      <div class="card" data-reveal style="--d:0.08s"><div class="ico">★</div><h3>Фирменный стиль площадки</h3><p>Терминал можно оформить в стиле вашего заведения.</p></div>
-    </div>
+  <div class="wrap ed">
+    <div class="ed__head" data-reveal style="--d:0s"><span class="eyebrow">Что вы получаете</span><h2>Мы делаем всё — вы получаете выручку</h2></div>
+    <ol class="ed__list">
+      <li data-reveal style="--d:0.0s"><span class="ed__n" aria-hidden="true">01</span><div><h3>Оборудование, установка и обслуживание — за счёт EnerGO</h3><p>Вы не покупаете терминал и не платите за его установку и обслуживание.</p></div></li>
+      <li data-reveal style="--d:0.06s"><span class="ed__n" aria-hidden="true">02</span><div><h3>Доля выручки терминала</h3><p>Заведение получает долю выручки терминала. <span class="todo">[УТОЧНИТЬ: условия и размер доли — публиковать только после подтверждения]</span></p></div></li>
+      <li data-reveal style="--d:0.12s"><span class="ed__n" aria-hidden="true">03</span><div><h3>Персонал ничего не делает</h3><p>Сотрудникам не нужно выдавать пауэрбанки и отвечать за них: терминал работает сам.</p></div></li>
+      <li data-reveal style="--d:0.0s"><span class="ed__n" aria-hidden="true">04</span><div><h3>Фирменный стиль площадки</h3><p>Терминал можно оформить в стиле вашего заведения.</p></div></li>
+    </ol>
   </div>
 </section>
 
 <section class="sheet sheet--white">
   <div class="wrap">
     <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Оборудование</span><h2>Какой терминал подойдёт</h2><p>Четыре типа терминалов — от компактного до самого вместительного.</p></div>
-    <div class="grid grid--4">
-<div class="card term" data-reveal style="--d:0s"><div class="term__art"><div class="slots" style="--c:2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">6 пауэрбанков</b><h3>S06</h3><p>Самый компактный.</p></div>
-<div class="card term" data-reveal style="--d:0.08s"><div class="term__art"><div class="slots" style="--c:2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">8 пауэрбанков</b><h3>S08</h3><p>25×19×22 см, встаёт у кассы.</p></div>
-<div class="card term" data-reveal style="--d:0.16s"><div class="term__art"><div class="slots" style="--c:4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">24 пауэрбанка</b><h3>S24</h3><p>Для мест с большим потоком.</p></div>
-<div class="card term" data-reveal style="--d:0.24s"><div class="term__art"><div class="slots" style="--c:6" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><b class="size">48 пауэрбанков</b><h3>CS48</h3><p>Самый вместительный.</p></div></div>
+    <div class="tconf" data-tconf>
+      <div class="tconf__tabs" role="tablist" aria-label="Модель терминала"><button class="tconf__tab" role="tab" id="tc-t-S06" aria-controls="tc-p-S06" aria-selected="true" data-tc="S06" type="button">S06</button><button class="tconf__tab" role="tab" id="tc-t-S08" aria-controls="tc-p-S08" aria-selected="false" data-tc="S08" type="button">S08</button><button class="tconf__tab" role="tab" id="tc-t-S24" aria-controls="tc-p-S24" aria-selected="false" data-tc="S24" type="button">S24</button><button class="tconf__tab" role="tab" id="tc-t-CS48" aria-controls="tc-p-CS48" aria-selected="false" data-tc="CS48" type="button">CS48</button></div>
+      <div class="tconf__panel is-active" role="tabpanel" id="tc-p-S06" aria-labelledby="tc-t-S06" data-tc-panel="S06">
+        <div class="tconf__art" aria-hidden="true"><div class="slots slots--xl" style="--c:2"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i></div></div>
+        <div class="tconf__info"><b class="tconf__cap">6</b><span class="tconf__unit">пауэрбанков</span><h3>S06</h3><p>Самый компактный.</p></div>
+      </div>
+      <div class="tconf__panel" role="tabpanel" id="tc-p-S08" aria-labelledby="tc-t-S08" data-tc-panel="S08">
+        <div class="tconf__art" aria-hidden="true"><div class="slots slots--xl" style="--c:2"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i></div></div>
+        <div class="tconf__info"><b class="tconf__cap">8</b><span class="tconf__unit">пауэрбанков</span><h3>S08</h3><p>25×19×22 см, встаёт у кассы.</p></div>
+      </div>
+      <div class="tconf__panel" role="tabpanel" id="tc-p-S24" aria-labelledby="tc-t-S24" data-tc-panel="S24">
+        <div class="tconf__art" aria-hidden="true"><div class="slots slots--xl" style="--c:4"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i></div></div>
+        <div class="tconf__info"><b class="tconf__cap">24</b><span class="tconf__unit">пауэрбанка</span><h3>S24</h3><p>Для мест с большим потоком.</p></div>
+      </div>
+      <div class="tconf__panel" role="tabpanel" id="tc-p-CS48" aria-labelledby="tc-t-CS48" data-tc-panel="CS48">
+        <div class="tconf__art" aria-hidden="true"><div class="slots slots--xl" style="--c:6"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i><i style="--k:24"></i><i style="--k:25"></i><i style="--k:26"></i><i style="--k:27"></i><i style="--k:28"></i><i style="--k:29"></i><i style="--k:30"></i><i style="--k:31"></i><i style="--k:32"></i><i style="--k:33"></i><i style="--k:34"></i><i style="--k:35"></i><i style="--k:36"></i><i style="--k:37"></i><i style="--k:38"></i><i style="--k:39"></i><i style="--k:40"></i><i style="--k:41"></i><i style="--k:42"></i><i style="--k:43"></i><i style="--k:44"></i><i style="--k:45"></i><i style="--k:46"></i><i style="--k:47"></i></div></div>
+        <div class="tconf__info"><b class="tconf__cap">48</b><span class="tconf__unit">пауэрбанков</span><h3>CS48</h3><p>Самый вместительный.</p></div>
+      </div>
+    </div>
     <p style="margin-top:24px"><span class="todo">[УТОЧНИТЬ: какой терминал для каких площадок рекомендуется; габариты S06, S24, CS48]</span></p>
   </div>
 </section>
@@ -47,7 +61,14 @@
   <div class="wrap">
     <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Площадки</span><h2>Где ставим терминалы</h2></div>
     <ul class="chips" data-reveal style="--d:0s"><li>Станции метро и транспортные узлы</li><li>Фитнес-клубы</li><li>Кафе, бары и рестораны</li><li>Торговые центры</li><li>Рынки</li><li>МФЦ</li></ul>
-    <div style="margin-top:56px" data-reveal style="--d:0s"><span class="eyebrow">Как проходит запуск</span><p><span class="todo">[УТОЧНИТЬ: этапы сотрудничества: от заявки до запуска терминала, сроки, требования к площадке]</span></p></div>
+    <div class="head head--sub" data-reveal style="--d:0s"><h2>Как проходит запуск</h2></div>
+    <ol class="slotgrid" style="--n:4">
+      <li class="slot" data-reveal style="--d:0.06s"><span class="slot__n" aria-hidden="true">01</span><span class="todo">[УТОЧНИТЬ: этап 1]</span></li>
+      <li class="slot" data-reveal style="--d:0.12s"><span class="slot__n" aria-hidden="true">02</span><span class="todo">[УТОЧНИТЬ: этап 2]</span></li>
+      <li class="slot" data-reveal style="--d:0.18s"><span class="slot__n" aria-hidden="true">03</span><span class="todo">[УТОЧНИТЬ: этап 3]</span></li>
+      <li class="slot" data-reveal style="--d:0.0s"><span class="slot__n" aria-hidden="true">04</span><span class="todo">[УТОЧНИТЬ: этап 4]</span></li>
+    </ol>
+    <p class="slotnote"><span class="todo">[УТОЧНИТЬ: этапы сотрудничества — от заявки до запуска терминала, сроки, требования к площадке]</span></p>
   </div>
 </section>
 

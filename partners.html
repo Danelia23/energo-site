@@ -16,30 +16,44 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnerGO","legalName":"ООО «ЭНЕРГО ТЕХНОЛОДЖИС»","taxID":"5024194594","telephone":"+7-800-600-42-64","email":"support@energo.app","address":{"@type":"PostalAddress","addressCountry":"RU","addressLocality":"Москва","streetAddress":"пл. Калужская, д. 1, к. 1, помещ. 1П","postalCode":"119049"}}</script>
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
-<script>document.documentElement.classList.add("js")</script>
+<script>document.documentElement.classList.add("js");try{if(localStorage.getItem("energo_no_motion")==="1")document.documentElement.classList.add("no-motion")}catch(e){}</script>
 </head>
 <body>
 <a class="skip" href="#main">К содержимому</a>
+<div class="cookie" id="cookie" role="dialog" aria-label="Использование cookie" hidden>
+  <p>Мы используем cookie, чтобы улучшить пользовательский опыт и понимать, как работает сайт. Выберите, какие cookie вы разрешаете использовать. Подробнее — в <a href="privacy.html">Политике обработки персональных данных</a>.</p>
+  <button class="cookie__settings" data-cookie="settings" type="button">Настроить cookie</button>
+  <div class="cookie__opts" data-open="false">
+    <label><input type="checkbox" checked disabled> <span><b>Необходимые</b><br>Нужны для работы сайта, отключить нельзя.</span></label>
+    <label><input type="checkbox" name="analytics"> <span><b>Аналитика</b><br>Помогает понять, как посетители пользуются сайтом.</span></label>
+  </div>
+  <div class="cookie__row">
+    <button class="btn btn--navy" data-cookie="accept" type="button">Принять все</button>
+    <button class="btn btn--line" data-cookie="reject" type="button">Отклонить все</button>
+  </div>
+</div>
 <header class="header">
   <div class="wrap header__in">
     <a class="logo" href="index.html" aria-label="EnerGO — на главную"><img class="logo__w" src="assets/img/logo-white.svg" alt="EnerGO" width="187" height="39"></a>
+    <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
     <nav class="nav" id="nav" data-open="false" aria-label="Основное меню">
       <a href="business.html">Для бизнеса</a>
       <a href="franchise.html">Франшиза</a>
       <a href="events.html">Для мероприятий</a>
       <a href="partners.html" aria-current="page">Партнёры</a>
       <a class="nav__mobile" href="contacts.html">Контакты</a>
+      <div class="nav__meta"><a href="tel:+78006004264">8 (800) 600-42-64</a><a href="mailto:support@energo.app">support@energo.app</a></div>
       <a class="nav__app" href="https://onelink.to/35pdxt">Скачать приложение</a>
     </nav>
     <div class="header__act">
       <a class="header__phone" href="tel:+78006004264">8 (800) 600-42-64</a>
       <a class="btn btn--yellow btn--sm header__cta" href="https://onelink.to/35pdxt">Скачать приложение</a>
     </div>
-    <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <i class="header__prog" aria-hidden="true"></i>
   </div>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 <section class="hero hero--page">
   <!-- Фон: положите фото в assets/img/hero-partners.jpg. Для видео вместо фото: <video class="hero__video" autoplay muted loop playsinline src="assets/img/hero.mp4"></video> -->
   <div class="hero__bg" style="--hero-img:url('../assets/img/hero-partners.jpg')" aria-hidden="true"></div>
@@ -66,19 +80,20 @@
       <div class="logo-tile" data-reveal style="--d:0s"><img src="assets/partners/metro.svg" alt="Московский метрополитен" onerror="this.replaceWith(document.createTextNode('Московский метрополитен'))"></div>
       <div class="logo-tile" data-reveal style="--d:0.05s"><img src="assets/partners/shokoladnitsa.svg" alt="Шоколадница" onerror="this.replaceWith(document.createTextNode('Шоколадница'))"></div>
       <div class="logo-tile" data-reveal style="--d:0.1s"><img src="assets/partners/burger-king.svg" alt="Burger King" onerror="this.replaceWith(document.createTextNode('Burger King'))"></div>
-      <div class="logo-tile" data-reveal style="--d:0.15000000000000002s"><img src="assets/partners/cofix.svg" alt="Cofix" onerror="this.replaceWith(document.createTextNode('Cofix'))"></div>
+      <div class="logo-tile" data-reveal style="--d:0.15s"><img src="assets/partners/cofix.svg" alt="Cofix" onerror="this.replaceWith(document.createTextNode('Cofix'))"></div>
       <div class="logo-tile" data-reveal style="--d:0.2s"><img src="assets/partners/rostics.svg" alt="Rostic's" onerror="this.replaceWith(document.createTextNode('Rostic\'s'))"></div>
       <div class="logo-tile" data-reveal style="--d:0.25s"><img src="assets/partners/kofe-haus.svg" alt="Кофе Хауз" onerror="this.replaceWith(document.createTextNode('Кофе Хауз'))"></div>
-      <div class="logo-tile" data-reveal style="--d:0.30000000000000004s"><img src="assets/partners/mfc.svg" alt="МФЦ" onerror="this.replaceWith(document.createTextNode('МФЦ'))"></div>
+      <div class="logo-tile" data-reveal style="--d:0.3s"><img src="assets/partners/mfc.svg" alt="МФЦ" onerror="this.replaceWith(document.createTextNode('МФЦ'))"></div>
+      <a class="logo-tile logo-tile--cta" href="business.html#form" data-reveal style="--d:0.35s"><span>Ваш логотип здесь</span><small>Стать партнёром</small></a>
     </div>
-    <p style="margin-top:18px;font-size:14px;color:var(--muted)">Положите логотипы в <code>assets/partners/</code> (имена файлов — как в коде страницы). Пока их нет, показывается название.</p>
+    <!-- Логотипы партнёров: положите файлы в assets/partners/ (metro.svg, shokoladnitsa.svg, burger-king.svg, cofix.svg, rostics.svg, kofe-haus.svg, mfc.svg); пока их нет, показываются названия -->
   </div>
 </section>
 
 <section class="sheet sheet--white">
   <div class="wrap">
     <div class="head" data-reveal style="--d:0s"><span class="eyebrow">История</span><h2>Как мы росли</h2></div>
-    <ul class="timeline" style="max-width:720px" data-reveal style="--d:0s">
+    <ul class="timeline" data-reveal style="--d:0s">
       <li><b>2019</b><span>Первый терминал в Москве.</span></li>
       <li><b>2020</b><span>Пилот с Московским метрополитеном, около 150 терминалов.</span></li>
       <li><b>2021</b><span>Контракт на установку терминалов на каждой станции метро.</span></li>
@@ -90,11 +105,11 @@
 <section class="sheet">
   <div class="wrap">
     <div class="head" data-reveal style="--d:0s"><span class="eyebrow">Кейсы</span><h2>Что говорят партнёры</h2></div>
-    <div class="grid grid--3">
-      <div class="card" data-reveal style="--d:0s"><p><span class="todo">[УТОЧНИТЬ: кейс партнёра: название, задача, результат]</span></p></div>
-      <div class="card" data-reveal style="--d:0.08s"><p><span class="todo">[УТОЧНИТЬ: цитата партнёра с разрешением на публикацию]</span></p></div>
-      <div class="card" data-reveal style="--d:0.16s"><p><span class="todo">[УТОЧНИТЬ: кейс партнёра]</span></p></div>
-    </div>
+    <ol class="slotgrid" style="--n:3">
+      <li class="slot" data-reveal style="--d:0s"><span class="slot__n" aria-hidden="true">01</span><span class="todo">[УТОЧНИТЬ: кейс партнёра — название, задача, результат]</span></li>
+      <li class="slot" data-reveal style="--d:0.06s"><span class="slot__n" aria-hidden="true">02</span><span class="todo">[УТОЧНИТЬ: цитата партнёра с разрешением на публикацию]</span></li>
+      <li class="slot" data-reveal style="--d:0.12s"><span class="slot__n" aria-hidden="true">03</span><span class="todo">[УТОЧНИТЬ: кейс партнёра]</span></li>
+    </ol>
   </div>
 </section>
 
@@ -114,14 +129,10 @@
       <div class="footer__grid">
         <div>
           <p class="footer__tagline">Сервис зарядки гаджетов. Заряжай на ходу!</p>
-          <div class="footer__stores">
-            <a href="https://apps.apple.com/ru/app/id1507114521" rel="noopener">App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.energo.rnapp" rel="noopener">Google Play</a>
-            <a href="https://www.rustore.ru/catalog/app/com.energo.rnapp" rel="noopener">RuStore</a>
-          </div>
+          <p class="footer__apps">Приложение: <a href="https://apps.apple.com/ru/app/id1507114521" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.energo.rnapp" rel="noopener">Google Play</a>, <a href="https://www.rustore.ru/catalog/app/com.energo.rnapp" rel="noopener">RuStore</a></p>
         </div>
         <div>
-          <h4>Разделы</h4>
+          <p class="footer__h">Разделы</p>
           <ul>
             <li><a href="business.html">Для бизнеса</a></li>
             <li><a href="franchise.html">Франшиза</a></li>
@@ -132,17 +143,17 @@
           </ul>
         </div>
         <div>
-          <h4>Связаться</h4>
+          <p class="footer__h">Связаться</p>
           <ul>
-            <li>Поддержка: <a href="tel:+78006004264">8 (800) 600-42-64</a></li>
+            <li><span class="footer__lbl">Поддержка</span><a href="tel:+78006004264">8 (800) 600-42-64</a></li>
             <li><a href="mailto:support@energo.app">support@energo.app</a></li>
             <li><a href="https://t.me/HelpEnerGO_bot" rel="noopener">Telegram-бот поддержки</a></li>
-            <li>Коммерческий отдел: <a href="tel:+74951201876">8 (495) 120-18-76</a></li>
+            <li><span class="footer__lbl">Коммерческий отдел</span><a href="tel:+74951201876">8 (495) 120-18-76</a></li>
             <li><a href="mailto:office@energo.app">office@energo.app</a></li>
           </ul>
         </div>
         <div class="footer__req">
-          <h4>Реквизиты</h4>
+          <p class="footer__h">Реквизиты</p>
           ООО «ЭНЕРГО ТЕХНОЛОДЖИС»<br>
           ИНН 5024194594 · ОГРН 1195081019803<br>
           119049, г. Москва, пл. Калужская, д. 1, к. 1, помещ. 1П<br>
@@ -153,28 +164,17 @@
           </ul>
         </div>
       </div>
-      <a class="footer__mark" href="index.html" aria-label="EnerGO — на главную"><img src="assets/img/logo.svg" alt="" width="187" height="39"></a>
+      <a class="footer__mark" href="index.html" aria-label="EnerGO — на главную"><img src="assets/img/logo-smooth.svg" alt="" width="187" height="39"></a>
       <div class="footer__bottom">
         <span>Программа «EnerGO» включена в реестр российского ПО (запись № 32488 от 05.03.2026). Свидетельство о регистрации программы для ЭВМ № 2022665484 от 17.08.2022.</span>
         <span>© 2026 ООО «ЭНЕРГО ТЕХНОЛОДЖИС»</span>
+        <button class="footer__motion" type="button" data-motion aria-pressed="false">Остановить анимацию</button>
       </div>
     </div>
   </div>
   <div class="footer__sk">Участник «Сколково»</div>
 </footer>
 
-<div class="cookie" id="cookie" role="dialog" aria-label="Использование cookie" hidden>
-  <p>Мы используем cookie, чтобы улучшить пользовательский опыт и понимать, как работает сайт. Выберите, какие cookie вы разрешаете использовать. Подробнее — в <a href="privacy.html">Политике обработки персональных данных</a>.</p>
-  <button class="cookie__settings" data-cookie="settings" type="button">Настроить cookie</button>
-  <div class="cookie__opts" data-open="false">
-    <label><input type="checkbox" checked disabled> <span><b>Необходимые</b><br>Нужны для работы сайта, отключить нельзя.</span></label>
-    <label><input type="checkbox" name="analytics"> <span><b>Аналитика</b><br>Помогает понять, как посетители пользуются сайтом.</span></label>
-  </div>
-  <div class="cookie__row">
-    <button class="btn btn--navy" data-cookie="accept" type="button">Принять все</button>
-    <button class="btn btn--line" data-cookie="reject" type="button">Отклонить все</button>
-  </div>
-</div>
 <script src="js/config.js"></script>
 <script src="js/main.js"></script>
 </body>

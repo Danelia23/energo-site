@@ -19,6 +19,7 @@
   function init() {
     var canvas = document.createElement("canvas");
     canvas.className = "term-canvas";
+    canvas.setAttribute("role", "img"); canvas.setAttribute("aria-label", "Объёмная модель терминала EnerGO с ячейками для пауэрбанков");
     var renderer;
     try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); } catch (e) { return; }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -116,8 +117,9 @@
       if (!visible || document.hidden) { running = false; return; }
       var dt = Math.min((now - (prev || now)) / 1000, 0.05); prev = now;
       var t = (now - t0) / 1000;
+      var calm = document.documentElement.classList.contains("no-motion");   // «Остановить анимацию»: терминал не вращается сам, но его можно крутить мышью
       if (!dragging) {
-        var idle = (now - lastMove) > 1200;
+        var idle = (now - lastMove) > 1200 && !calm;
         yaw += vel; vel *= 0.93;                         // инерция после броска
         if (idle) {                                      // медленное вращение; у лицевой стороны притормаживает
           var a = ((yaw - 0.55) % (Math.PI * 2) + Math.PI * 3) % (Math.PI * 2) - Math.PI;   // угол от лицевого вида, -π..π
@@ -131,7 +133,7 @@
       root.scale.setScalar(0.8 + 0.2 * e);
       spin.rotation.y = yaw + (1 - e) * -1.6;
       root.rotation.x = 0.1 + my * 0.06; root.rotation.z = -mx * 0.03;
-      root.position.y = Math.sin(t * 1.05) * 0.025;
+      root.position.y = calm ? 0 : Math.sin(t * 1.05) * 0.025;
       renderer.render(scene, camera);
       requestAnimationFrame(frame);
     }

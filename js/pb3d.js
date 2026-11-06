@@ -116,8 +116,9 @@
     var k = Math.min(t / 1.9, 1), e = 1 - Math.pow(1 - k, 3);                 // появление
     root.scale.setScalar(0.55 + 0.45 * e);
     canvas.style.opacity = Math.min(t / 0.5, 1);
-    spin.rotation.y = state.sc * TURNS * Math.PI * 2 + (1 - e) * -5.6 + Math.sin(t * 0.9) * 0.12 - 0.22;
-    root.position.y = Math.sin(t * 1.15) * 0.05;
+    var calm = document.documentElement.classList.contains("no-motion");     // «Остановить анимацию»: остаётся только вращение от прокрутки
+    spin.rotation.y = state.sc * TURNS * Math.PI * 2 + (1 - e) * -5.6 + (calm ? 0 : Math.sin(t * 0.9) * 0.12) - 0.22;
+    root.position.y = calm ? 0 : Math.sin(t * 1.15) * 0.05;
     tilt.rotation.x = state.my * 0.12;
     tilt.rotation.y = state.mx * 0.2;
     renderer.render(scene, camera);

@@ -14,8 +14,10 @@ const SHORT = "в|во|на|с|со|к|ко|о|об|у|и|а|но|не|ни|по
 const nbspText = (t) => t
   .replace(new RegExp(`(^|[\\s(«"„—–-])(${SHORT}) (?=\\S)`, "gi"), (m, a, b) => `${a}${b} `)
   .replace(/ (—|–) /g, " $1 ")
+  .replace(/ (—|–)$/, " $1")      // тире в конце строки перед <br> не отрывается от слова
   .replace(/(\d) (₽|мА·ч|мин|ч|сек|км|м|см|%|шт\.?)/g, "$1 $2")
-  .replace(/(\d) (\d{3})(?!\d)/g, "$1\u00A0$2"); // разряды чисел: «15 000» не разрывается
+  .replace(/(\d) (\d{3})(?!\d)/g, "$1\u00A0$2")
+  .replace(/(млн|млрд|тыс\.?) ₽/g, "$1\u00A0₽"); // разряды чисел: «15 000» не разрывается
 function typo(html) {
   // обрабатываем только текст между тегами; script/style/svg/комментарии не трогаем
   const parts = html.split(/(<!--[\s\S]*?-->|<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<svg[\s\S]*?<\/svg>|<[^>]+>)/g);
@@ -28,8 +30,9 @@ for (const f of readdirSync(join(ROOT, "src/pages")).filter((n) => n.endsWith(".
   const title = (src.match(/<!--title: (.*?)-->/) || [])[1] || "EnerGO";
   const desc = (src.match(/<!--desc: (.*?)-->/) || [])[1] || "";
   const main = src.replace(/<!--(title|desc): .*?-->\n?/g, "").trim();
-  const nav = header.replace(new RegExp(`(<a href="${name}\\.html")(?=>)`), '$1 aria-current="page"');
-  const html = headOpen + `<title>${title}</title>` + headClose.replace(/\{\{desc\}\}/g, desc).replace(/\{\{title\}\}/g, title) + nav + `\n<main id="main">\n${process.env.NOTYPO ? main : typo(main)}\n</main>` + footer;
+  // aria-current ставится только пункту меню текущей страницы (внутри <nav>), а не логотипу
+  const nav = header.replace(/<nav[\s\S]*?<\/nav>/, (m) => m.replace(new RegExp(`(<a (?:class="[^"]*" )?href="${name}\\.html")(?=>)`), '$1 aria-current="page"'));
+  const html = headOpen + `<title>${title}</title>` + headClose.replace(/\{\{desc\}\}/g, desc).replace(/\{\{title\}\}/g, title) + nav + `\n<main id="main" tabindex="-1">\n${process.env.NOTYPO ? main : typo(main)}\n</main>` + footer;
   writeFileSync(join(ROOT, `${name}.html`), html);
   console.log("✓", `${name}.html`);
 }

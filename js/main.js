@@ -8,7 +8,11 @@
   /* ---------- Шапка: фон после прокрутки ---------- */
   var header = document.querySelector(".header");
   if (header) {
-    var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 24); };
+    var onScroll = function () {
+      header.classList.toggle("is-scrolled", window.scrollY > 24);
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      header.style.setProperty("--p", max > 0 ? Math.min(window.scrollY / max, 1).toFixed(4) : 0);
+    };
     onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
   }
 
@@ -52,28 +56,24 @@
   }
 
 
-  var termCard = document.querySelector(".cta__card");
-  if (termCard && window.matchMedia("(hover: hover)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    var ctaBlock = termCard.closest(".cta");
-    ctaBlock.addEventListener("mousemove", function (e) {
-      var r = ctaBlock.getBoundingClientRect();
-      termCard.style.setProperty("--tx", (((e.clientX - r.left) / r.width) * 2 - 1).toFixed(3));
-      termCard.style.setProperty("--ty", (((e.clientY - r.top) / r.height) * 2 - 1).toFixed(3));
-    });
-    ctaBlock.addEventListener("mouseleave", function () { termCard.style.setProperty("--tx", 0); termCard.style.setProperty("--ty", 0); });
-  }
-
-
-
   /* ---------- FAQ: вкладки и плавное раскрытие ответов ---------- */
   var faq = document.querySelector(".faq");
   if (faq) {
     var tabs = faq.querySelectorAll("[data-faq-tab]"), panels = faq.querySelectorAll("[data-faq-panel]");
-    tabs.forEach(function (tab) {
-      tab.addEventListener("click", function () {
-        var n = tab.getAttribute("data-faq-tab");
-        tabs.forEach(function (t) { var on = t === tab; t.classList.toggle("is-active", on); t.setAttribute("aria-selected", String(on)); });
-        panels.forEach(function (p) { p.classList.toggle("is-active", p.getAttribute("data-faq-panel") === n); });
+    var selectTab = function (tab, focus) {
+      var n = tab.getAttribute("data-faq-tab");
+      tabs.forEach(function (t) { var on = t === tab; t.classList.toggle("is-active", on); t.setAttribute("aria-selected", String(on)); t.tabIndex = on ? 0 : -1; });
+      panels.forEach(function (p) { p.classList.toggle("is-active", p.getAttribute("data-faq-panel") === n); });
+      if (focus) tab.focus();
+    };
+    tabs.forEach(function (tab, i) {
+      var n = tab.getAttribute("data-faq-tab"), panel = faq.querySelector('[data-faq-panel="' + n + '"]');
+      tab.id = tab.id || "faq-tab-" + n; tab.setAttribute("aria-controls", "faq-panel-" + n); tab.tabIndex = tab.classList.contains("is-active") ? 0 : -1;
+      if (panel) { panel.id = "faq-panel-" + n; panel.setAttribute("aria-labelledby", tab.id); }
+      tab.addEventListener("click", function () { selectTab(tab, false); });
+      tab.addEventListener("keydown", function (e) {
+        var to = e.key === "ArrowRight" ? (i + 1) % tabs.length : e.key === "ArrowLeft" ? (i - 1 + tabs.length) % tabs.length : e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : -1;
+        if (to > -1) { e.preventDefault(); selectTab(tabs[to], true); }
       });
     });
     var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -99,18 +99,53 @@
     });
   }
 
+  /* ---------- Конфигуратор терминалов: вкладки S06 / S08 / S24 / CS48 ---------- */
+  document.querySelectorAll("[data-tconf]").forEach(function (box) {
+    var tabs = box.querySelectorAll("[data-tc]"), panels = box.querySelectorAll("[data-tc-panel]");
+    var pick = function (tab, focus) {
+      var id = tab.getAttribute("data-tc");
+      tabs.forEach(function (t) { var on = t === tab; t.setAttribute("aria-selected", String(on)); t.tabIndex = on ? 0 : -1; });
+      panels.forEach(function (p) { p.classList.toggle("is-active", p.getAttribute("data-tc-panel") === id); });
+      if (focus) tab.focus();
+    };
+    tabs.forEach(function (tab, i) {
+      tab.tabIndex = tab.getAttribute("aria-selected") === "true" ? 0 : -1;
+      tab.addEventListener("click", function () { pick(tab, false); });
+      tab.addEventListener("keydown", function (e) {
+        var to = e.key === "ArrowRight" ? (i + 1) % tabs.length : e.key === "ArrowLeft" ? (i - 1 + tabs.length) % tabs.length : e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : -1;
+        if (to > -1) { e.preventDefault(); pick(tabs[to], true); }
+      });
+    });
+  });
+
+  /* ---------- Шаги на телефоне — карусель: делаем её доступной с клавиатуры, только когда она прокручивается ---------- */
+  var stepsList = document.querySelector(".steps");
+  if (stepsList) {
+    var checkSteps = function () {
+      if (stepsList.scrollWidth > stepsList.clientWidth + 4) { stepsList.tabIndex = 0; stepsList.setAttribute("aria-label", "Шаги: листайте вбок"); }
+      else { stepsList.removeAttribute("tabindex"); stepsList.removeAttribute("aria-label"); }
+    };
+    checkSteps(); window.addEventListener("resize", checkSteps);
+  }
+
   /* ---------- Меню ---------- */
   var burger = document.querySelector(".burger");
   var nav = document.getElementById("nav");
   if (burger && nav) {
-    burger.addEventListener("click", function () {
-      var open = nav.getAttribute("data-open") === "true";
-      nav.setAttribute("data-open", String(!open));
-      burger.setAttribute("aria-expanded", String(!open));
-    });
-    nav.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") { nav.setAttribute("data-open", "false"); burger.setAttribute("aria-expanded", "false"); }
-    });
+    var inertTargets = [document.getElementById("main"), document.querySelector("footer")];
+    var setNav = function (open, back) {
+      nav.setAttribute("data-open", String(open));
+      burger.setAttribute("aria-expanded", String(open));
+      document.documentElement.classList.toggle("nav-open", open);
+      inertTargets.forEach(function (el) { if (el) el.inert = open; });      // пока меню открыто, страница под ним недоступна
+      if (!open && back) burger.focus();
+    };
+    burger.addEventListener("click", function () { setNav(nav.getAttribute("data-open") !== "true"); });
+    nav.addEventListener("click", function (e) { if (e.target.closest("a")) setNav(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && nav.getAttribute("data-open") === "true") setNav(false, true); });
+    var wide = window.matchMedia("(min-width: 961px)");
+    var onWide = function () { if (wide.matches) setNav(false); };
+    if (wide.addEventListener) wide.addEventListener("change", onWide); else if (wide.addListener) wide.addListener(onWide);
   }
 
   /* ---------- Cookie и аналитика ---------- */
@@ -133,29 +168,41 @@
     window.ym(CFG.metrikaId, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
   }
   var banner = document.getElementById("cookie");
-  function showBanner() { if (banner) banner.hidden = false; }
+  var bannerOpener = null;
+  function showBanner(opener) {
+    if (!banner) return;
+    banner.hidden = false;
+    if (opener) { bannerOpener = opener; banner.tabIndex = -1; banner.focus({ preventScroll: true }); }   // открыто по просьбе пользователя — переносим фокус
+  }
+  function hideBanner() {
+    banner.hidden = true;
+    if (bannerOpener) { bannerOpener.focus(); bannerOpener = null; }
+  }
   if (banner) {
     var consent = readConsent();
     if (consent) applyConsent(consent); else showBanner();
     var opts = banner.querySelector(".cookie__opts");
     var analyticsBox = banner.querySelector("[name=analytics]");
-    banner.querySelector("[data-cookie=settings]").addEventListener("click", function () {
+    var settingsBtn = banner.querySelector("[data-cookie=settings]");
+    opts.id = opts.id || "cookie-opts"; settingsBtn.setAttribute("aria-controls", opts.id); settingsBtn.setAttribute("aria-expanded", "false");
+    settingsBtn.addEventListener("click", function () {
       var open = opts.getAttribute("data-open") === "true";
       opts.setAttribute("data-open", String(!open));
+      settingsBtn.setAttribute("aria-expanded", String(!open));
       banner.querySelector("[data-cookie=accept]").textContent = !open ? "Сохранить выбор" : "Принять все";
     });
     banner.querySelector("[data-cookie=accept]").addEventListener("click", function () {
       var custom = opts.getAttribute("data-open") === "true";
       saveConsent({ necessary: true, analytics: custom ? analyticsBox.checked : true, at: Date.now() });
-      banner.hidden = true;
+      hideBanner();
     });
     banner.querySelector("[data-cookie=reject]").addEventListener("click", function () {
       saveConsent({ necessary: true, analytics: false, at: Date.now() });
-      banner.hidden = true;
+      hideBanner();
     });
   }
   document.querySelectorAll("[data-open-cookie]").forEach(function (b) {
-    b.addEventListener("click", function (e) { e.preventDefault(); showBanner(); });
+    b.addEventListener("click", function (e) { e.preventDefault(); showBanner(b); });
   });
 
   /* ---------- Модальное окно заявки ---------- */
@@ -172,20 +219,34 @@
   });
 
   /* ---------- Формы ---------- */
-  document.querySelectorAll("form[data-form]").forEach(function (form) {
+  document.querySelectorAll("form[data-form]").forEach(function (form, n) {
     var msg = form.querySelector(".form__msg");
+    msg.id = msg.id || "form-msg-" + n;
     function say(state, text) { msg.setAttribute("data-state", state); msg.textContent = text; }
+    var isBad = function (f) {
+      var invalid = f.type === "checkbox" ? !f.checked : !f.value.trim();
+      if (f.type === "tel" && f.value.replace(/\D/g, "").length < 10) invalid = true;
+      if (f.type === "email" && f.value.trim() && !/^\S+@\S+\.\S+$/.test(f.value.trim())) invalid = true;
+      return invalid;
+    };
+    var nameOf = function (f) {
+      if (f.type === "checkbox") return "согласие на обработку персональных данных";
+      var l = f.closest("label"), t = l && l.firstChild ? l.firstChild.textContent : f.name;
+      return t.replace(/\s*\*\s*$/, "").trim().toLowerCase();
+    };
+    // ошибка исчезает, как только поле исправлено
+    form.addEventListener("input", function (e) { var f = e.target; if (f.hasAttribute && f.hasAttribute("required") && f.getAttribute("aria-invalid") === "true" && !isBad(f)) f.setAttribute("aria-invalid", "false"); });
+    form.addEventListener("change", function (e) { var f = e.target; if (f.type === "checkbox" && f.checked) f.setAttribute("aria-invalid", "false"); });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (form.querySelector(".hp input").value) return; // защита от ботов
-      var bad = false;
+      var bad = [], first = null;
       form.querySelectorAll("[required]").forEach(function (f) {
-        var invalid = f.type === "checkbox" ? !f.checked : !f.value.trim();
-        if (f.type === "tel" && f.value.replace(/\D/g, "").length < 10) invalid = true;
+        var invalid = isBad(f);
         f.setAttribute("aria-invalid", String(invalid));
-        if (invalid) bad = true;
+        if (invalid) { f.setAttribute("aria-describedby", msg.id); bad.push(nameOf(f)); if (!first) first = f; }
       });
-      if (bad) { say("err", "Проверьте обязательные поля и поставьте галочку согласия на обработку персональных данных."); return; }
+      if (bad.length) { say("err", "Проверьте: " + bad.join(", ") + "."); first.focus(); return; }
 
       var data = {};
       new FormData(form).forEach(function (v, k) { if (k !== "hp") data[k] = v; });
@@ -248,23 +309,49 @@
   /* ---------- Счётчики: числа «набегают» при появлении ---------- */
   (function () {
     var els = document.querySelectorAll("[data-count]");
-    if (!els.length || !("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!els.length || !("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.classList.contains("no-motion")) return;
     var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0"); };
     var run = function (el) {
-      var end = +el.getAttribute("data-count"), suf = el.getAttribute("data-suffix") || "", t0 = null, dur = 1300;
+      var end = +el.getAttribute("data-count"), suf = el.getAttribute("data-suffix") || "", vis = el._vis, t0 = null, dur = 1300;
       var step = function (t) {
         if (t0 === null) t0 = t;
         var k = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - k, 4);
-        el.textContent = fmt(Math.round(end * e)) + suf;
+        vis.textContent = fmt(Math.round(end * e)) + suf;
         if (k < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
     };
-    var io = new IntersectionObserver(function (en) {
-      en.forEach(function (x) { if (x.isIntersecting) { io.unobserve(x.target); run(x.target); } });
+    var cio = new IntersectionObserver(function (en) {
+      en.forEach(function (x) { if (x.isIntersecting) { cio.unobserve(x.target); run(x.target); } });
     }, { threshold: .4 });
-    els.forEach(function (el) { el.textContent = "0" + (el.getAttribute("data-suffix") || ""); io.observe(el); });
+    els.forEach(function (el) {
+      var fin = el.textContent, suf = el.getAttribute("data-suffix") || "";
+      var sr = document.createElement("span"); sr.className = "sr-only"; sr.textContent = fin;       // итоговое значение — для скринридеров
+      var vis = document.createElement("span"); vis.setAttribute("aria-hidden", "true"); vis.textContent = "0" + suf;
+      el.textContent = ""; el.appendChild(sr); el.appendChild(vis); el._vis = vis;
+      cio.observe(el);
+    });
   })();
+
+  /* ---------- Остановка анимации (WCAG 2.2.2): кнопка в подвале, выбор запоминается ---------- */
+  (function () {
+    var btn = document.querySelector("[data-motion]");
+    if (!btn) return;
+    var root = document.documentElement, KEY = "energo_no_motion";
+    var paint = function () {
+      var off = root.classList.contains("no-motion");
+      btn.setAttribute("aria-pressed", String(off));
+      btn.textContent = off ? "Включить анимацию" : "Остановить анимацию";
+    };
+    paint();
+    btn.addEventListener("click", function () {
+      var off = !root.classList.contains("no-motion");
+      root.classList.toggle("no-motion", off);
+      store(function () { localStorage.setItem(KEY, off ? "1" : "0"); });
+      paint();
+    });
+  })();
+
   /* Ссылки-заглушки (href="#") не прокручивают страницу к началу */
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest('a[href="#"]');
